@@ -1114,9 +1114,15 @@
         msgEl.textContent = 'Please enter a valid Email Address.'; return;
       }
     }
-    if (form.elements['phone'] && !phone) {
-      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-      msgEl.textContent = 'Please enter your Mobile / WhatsApp Number.'; return;
+    if (form.elements['phone']) {
+      if (!phone) {
+        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+        msgEl.textContent = 'Please enter your Mobile / WhatsApp Number.'; return;
+      }
+      if (!/^[\+\-\s\(\)0-9]{7,25}$/.test(phone)) {
+        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+        msgEl.textContent = 'Please enter a valid Phone Number (only numbers, +, - are allowed).'; return;
+      }
     }
     if (form.elements['course'] && !course && !form.elements['course'].readOnly) {
       msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
