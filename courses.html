@@ -1140,43 +1140,28 @@
     var courseService = course || serviceType || platform || 'General Enquiry';
     var pageName = (form.getAttribute('data-page') || document.title || 'KS Trainings').split('|')[0].trim();
 
-    // Mandatory Field Validation
-    if (form.elements['name'] && !name) {
-      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-      msgEl.textContent = 'Please enter your Full Name.'; return;
+    // Mandatory Field Validation (Native Browser Popups)
+    function showError(field, msg) {
+      if (field) {
+        field.setCustomValidity(msg);
+        field.reportValidity();
+        // Clear validity on input so the user can type again
+        field.addEventListener('input', function() { field.setCustomValidity(''); }, {once: true});
+      }
     }
+
+    if (form.elements['name'] && !name) { showError(form.elements['name'], 'Please enter your Full Name.'); return; }
     if (form.elements['email']) {
-      if (!email) {
-        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-        msgEl.textContent = 'Please enter your Email Address.'; return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-        msgEl.textContent = 'Please enter a valid Email Address.'; return;
-      }
+      if (!email) { showError(form.elements['email'], 'Please enter your Email Address.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError(form.elements['email'], 'Please enter a valid Email Address.'); return; }
     }
     if (form.elements['phone']) {
-      if (!phone) {
-        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-        msgEl.textContent = 'Please enter your Mobile / WhatsApp Number.'; return;
-      }
-      if (!/^[\+\-\s\(\)0-9]{7,25}$/.test(phone)) {
-        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-        msgEl.textContent = 'Please enter a valid Phone Number (only numbers, +, - are allowed).'; return;
-      }
+      if (!phone) { showError(form.elements['phone'], 'Please enter your Mobile / WhatsApp Number.'); return; }
+      if (!/^[\+\-\s\(\)0-9]{7,25}$/.test(phone)) { showError(form.elements['phone'], 'Please enter a valid Phone Number (only numbers, +, - are allowed).'); return; }
     }
-    if (form.elements['course'] && !course && !form.elements['course'].readOnly) {
-      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-      msgEl.textContent = 'Please specify the Course you are interested in.'; return;
-    }
-    if (form.elements['support_type'] && (!form.elements['support_type'].value || form.elements['support_type'].value.trim() === '')) {
-      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-      msgEl.textContent = 'Please select a Training or Support Type.'; return;
-    }
-    if (form.elements['description'] && !form.elements['description'].value.trim()) {
-      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
-      msgEl.textContent = 'Please describe your requirement in detail.'; return;
-    }
+    if (form.elements['course'] && !course && !form.elements['course'].readOnly) { showError(form.elements['course'], 'Please specify the Course you are interested in.'); return; }
+    if (form.elements['support_type'] && (!form.elements['support_type'].value || form.elements['support_type'].value.trim() === '')) { showError(form.elements['support_type'], 'Please select a Training or Support Type.'); return; }
+    if (form.elements['description'] && !form.elements['description'].value.trim()) { showError(form.elements['description'], 'Please describe your requirement in detail.'); return; }
 
 
     btn.disabled = true;
