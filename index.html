@@ -494,7 +494,7 @@
     <div class="slide-inner">
       <div class="slide-text">
         <h1>Get Full Placement Assistance <span>And Training.</span></h1>
-        <p class="lead">Learn Mulesoft, Pega, SAP Hybris, Python &amp; More</p>
+        <p class="lead">Learn AI, ML, Data Science, Gen AI, Data Engineering, Full Stack &amp; More</p>
         <p class="sub-lead">We provide complete placement assistance as our courses are on the latest IT technologies that are highly sought. We also have industry relations with 50+ companies.</p>
         <a href="courses.html" class="btn-view">View Courses</a>
       </div>
@@ -1781,6 +1781,41 @@
   }
   window.addEventListener('scroll', animateCounters);
   setTimeout(animateCounters, 500);
+</script>
+
+<script>
+  // ===== HERO SLIDER =====
+  (function() {
+    let slides = document.querySelectorAll('.hero .slide');
+    let dots = document.querySelectorAll('.hero .dot');
+    if(slides.length === 0) return;
+    
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 5000);
+    
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      if(dots.length > index) {
+        dots.forEach(d => d.classList.remove('active'));
+        dots[index].classList.add('active');
+      }
+      slides[index].classList.add('active');
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        currentSlide = index;
+        showSlide(currentSlide);
+        slideInterval = setInterval(nextSlide, 5000);
+      });
+    });
+  })();
 </script>
 </body>
 
