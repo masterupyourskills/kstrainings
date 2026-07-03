@@ -570,22 +570,22 @@
   <div class="section-inner">
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="num" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">500+</div>
+        <div class="num" data-count="50" data-suffix="+" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">0</div>
         <div class="label">Courses Available</div>
       </div>
       <div class="stat-item">
-        <div class="num" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">50,000+</div>
+        <div class="num" data-count="1000" data-suffix="+" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">0</div>
         <div class="label">Trainees Placed</div>
       </div>
       <div class="stat-item">
-        <div class="num" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">50+</div>
+        <div class="num" data-count="50" data-suffix="+" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">0</div>
         <div class="label">Hiring Partners</div>
       </div>
       <div class="stat-item">
         <div class="num" style="font-size:3rem;font-weight:900;color:#f59e0b;margin-bottom:10px;">24/7</div>
         <div class="label">Expert Support</div>
       </div>
-    </div>
+</div>
   </div>
 </section>
 
@@ -799,7 +799,30 @@
       <div class="divider"></div>
     </div>
     <div class="contact-grid">
-      <div class="contact-info">
+      
+<div class="contact-form" id="demo">
+        <h3>Book Your Free Demo Class</h3>
+        <form id="demoForm" onsubmit="event.preventDefault(); submitForm(this);" data-page="Home Page - KS Trainings">
+          <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+          <input class="form-field" type="text" id="f_name" name="name" placeholder="Full Name *" required>
+          <input class="form-field" type="email" id="f_email" name="email" placeholder="Email Address *" required>
+          <input class="form-field" type="tel" id="f_phone" name="phone" placeholder="Mobile / WhatsApp Number *" required>
+          <input class="form-field" type="text" id="f_course" name="course" placeholder="Which Course are you interested in? *" required>
+          <select class="form-field" id="f_support" name="support_type" required>
+            <option value="" disabled selected>Select Training Type</option>
+            <option value="Training &amp; Certification">Training &amp; Certification</option>
+            <option value="On-Job Support">On-Job Support</option>
+            <option value="Corporate Training">Corporate Training</option>
+          </select>
+          <textarea class="form-field" id="f_desc" name="description" placeholder="Describe your requirement in detail..." rows="3" required></textarea>
+          <label style="font-size:.85rem;color:#6b7280;display:block;margin-bottom:6px;">Anti-Spam Verification: What is 3 + 4?</label>
+          <input class="form-field" id="f_captcha" type="text" name="captcha" placeholder="Enter answer" required style="margin-bottom:18px;">
+          <button type="submit" class="btn-submit" id="ksSubmitBtn">Submit Enquiry</button>
+          <div id="ksFormMsg" style="display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;line-height:1.5;"></div>
+        </form>
+      </div>
+
+<div class="contact-info">
         <h3>Get In Touch With Us</h3>
 
         <div class="contact-item">
@@ -820,9 +843,6 @@
             <a href="mailto:masterupyourskills@gmail.com">masterupyourskills@gmail.com</a>
           </div>
         </div>
-
-      </div>
-      
     <!-- EMBEDDED MAP -->
     <div class="map-wrapper" style="margin-top: 40px; border-radius: 12px; overflow: hidden; background: #0a102b; padding: 20px;">
       <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Our Global Offices</h4>
@@ -850,28 +870,8 @@
       .map-pin:hover .pin-dot { background: #f59e0b; box-shadow: 0 0 15px #f59e0b; }
       @keyframes pulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
     </style>
-
-      <div class="contact-form" id="demo">
-        <h3>Book Your Free Demo Class</h3>
-        <form id="demoForm" onsubmit="event.preventDefault(); submitForm(this);" data-page="Home Page - KS Trainings">
-          <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
-          <input class="form-field" type="text" id="f_name" name="name" placeholder="Full Name *" required>
-          <input class="form-field" type="email" id="f_email" name="email" placeholder="Email Address *" required>
-          <input class="form-field" type="tel" id="f_phone" name="phone" placeholder="Mobile / WhatsApp Number *" required>
-          <input class="form-field" type="text" id="f_course" name="course" placeholder="Which Course are you interested in? *" required>
-          <select class="form-field" id="f_support" name="support_type" required>
-            <option value="" disabled selected>Select Training Type</option>
-            <option value="Training &amp; Certification">Training &amp; Certification</option>
-            <option value="On-Job Support">On-Job Support</option>
-            <option value="Corporate Training">Corporate Training</option>
-          </select>
-          <textarea class="form-field" id="f_desc" name="description" placeholder="Describe your requirement in detail..." rows="3" required></textarea>
-          <label style="font-size:.85rem;color:#6b7280;display:block;margin-bottom:6px;">Anti-Spam Verification: What is 3 + 4?</label>
-          <input class="form-field" id="f_captcha" type="text" name="captcha" placeholder="Enter answer" required style="margin-bottom:18px;">
-          <button type="submit" class="btn-submit" id="ksSubmitBtn">Submit Enquiry</button>
-          <div id="ksFormMsg" style="display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;line-height:1.5;"></div>
-        </form>
       </div>
+      
     </div>
   </div>
 </section>
@@ -1744,6 +1744,36 @@
 </script>
 <!-- ================= END FAQ & MOBILE MENU JS ================= -->
 
+<script>
+  // ===== NUMBER COUNTER ANIMATION =====
+  function animateCounters() {
+    const counters = document.querySelectorAll('.num[data-count]');
+    const speed = 200; // lower = faster
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      
+      const updateCount = () => {
+        const count = +counter.innerText.replace(/[^0-9]/g, '');
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc) + suffix;
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target + suffix;
+        }
+      };
+      // Only animate if in view (simple check)
+      const rect = counter.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0 && counter.innerText === '0') {
+        updateCount();
+      }
+    });
+  }
+  window.addEventListener('scroll', animateCounters);
+  setTimeout(animateCounters, 500);
+</script>
 </body>
 
 

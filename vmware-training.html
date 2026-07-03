@@ -1177,6 +1177,36 @@
 </script>
 <!-- ================= END FAQ & MOBILE MENU JS ================= -->
 
+<script>
+  // ===== NUMBER COUNTER ANIMATION =====
+  function animateCounters() {
+    const counters = document.querySelectorAll('.num[data-count]');
+    const speed = 200; // lower = faster
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-count');
+      const suffix = counter.getAttribute('data-suffix') || '';
+      
+      const updateCount = () => {
+        const count = +counter.innerText.replace(/[^0-9]/g, '');
+        const inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc) + suffix;
+          setTimeout(updateCount, 15);
+        } else {
+          counter.innerText = target + suffix;
+        }
+      };
+      // Only animate if in view (simple check)
+      const rect = counter.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0 && counter.innerText === '0') {
+        updateCount();
+      }
+    });
+  }
+  window.addEventListener('scroll', animateCounters);
+  setTimeout(animateCounters, 500);
+</script>
 </body>
 
 </html>
