@@ -1815,6 +1815,36 @@
     });
   })();
 </script>
+
+<script>
+  // ===== COURSE FILTERING =====
+  (function() {
+    const tabs = document.querySelectorAll('.ctab');
+    const cards = document.querySelectorAll('.course-card');
+    
+    if(tabs.length === 0 || cards.length === 0) return;
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        const cat = tab.getAttribute('data-cat');
+        
+        // Show/hide cards based on category
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script>
 </body>
 
 
