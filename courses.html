@@ -1140,6 +1140,39 @@
     var courseService = course || serviceType || platform || 'General Enquiry';
     var pageName = (form.getAttribute('data-page') || document.title || 'KS Trainings').split('|')[0].trim();
 
+    // Mandatory Field Validation
+    if (form.elements['name'] && !name) {
+      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+      msgEl.textContent = 'Please enter your Full Name.'; return;
+    }
+    if (form.elements['email']) {
+      if (!email) {
+        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+        msgEl.textContent = 'Please enter your Email Address.'; return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+        msgEl.textContent = 'Please enter a valid Email Address.'; return;
+      }
+    }
+    if (form.elements['phone'] && !phone) {
+      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+      msgEl.textContent = 'Please enter your Mobile / WhatsApp Number.'; return;
+    }
+    if (form.elements['course'] && !course && !form.elements['course'].readOnly) {
+      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+      msgEl.textContent = 'Please specify the Course you are interested in.'; return;
+    }
+    if (form.elements['support_type'] && (!form.elements['support_type'].value || form.elements['support_type'].value.trim() === '')) {
+      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+      msgEl.textContent = 'Please select a Training or Support Type.'; return;
+    }
+    if (form.elements['description'] && !form.elements['description'].value.trim()) {
+      msgEl.style.cssText = 'display:block;background:#fee2e2;color:#b91c1c;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
+      msgEl.textContent = 'Please describe your requirement in detail.'; return;
+    }
+
+
     btn.disabled = true;
     msgEl.style.cssText = 'display:block;background:#eff6ff;color:#1d4ed8;padding:12px 16px;border-radius:8px;font-size:.9rem;font-weight:600;margin-top:14px;';
     msgEl.textContent = 'Submitting your enquiry...';
