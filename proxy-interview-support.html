@@ -549,7 +549,7 @@
         <h5>Contact Us</h5>
         <a href="tel:+918675539226">+91-8675539226</a>
         <a href="mailto:masterupyourskills@gmail.com">masterupyourskills@gmail.com</a>
-        <a href="https://wa.me/918675539226" target="_blank">WhatsApp Us</a>
+        <a href="https://wa.me/918675539226?text=Hello%20KS%20Trainings,%20I%20am%20interested%20in%20your%20courses." target="_blank">WhatsApp Us</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1053,7 +1053,7 @@
 </style>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918675539226" target="_blank" class="whatsapp-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/918675539226?text=Hello%20KS%20Trainings,%20I%20am%20interested%20in%20your%20courses." target="_blank" class="whatsapp-float" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 2a13 13 0 0 0-11 20l-2 7 7-2a13 13 0 1 0 6-25zm0 24c-2 0-4-1-6-2l-1-1-4 1 1-4-1-1a11 11 0 1 1 11 7zm6-9c0-.2-.1-.4-.5-.6l-3-1c-.2 0-.4 0-.5.1l-1 2c-.2.1-.4.1-.7 0a8 8 0 0 1-4-4c-.1-.3 0-.5.2-.7l1-1c.1-.2.2-.4.1-.6l-1-3c-.1-.3-.3-.4-.5-.4h-.5c-.3 0-.7.1-1 .5a4 4 0 0 0-1 3c0 2 1 4 2 5 2 3 5 5 8 6 1 0 3 0 4-1 .4-.4.6-1 .6-1 0-.2-.1-.4-.5-.6z"/></svg>
 </a>
 
@@ -1381,6 +1381,86 @@
         mainNav.style.boxShadow = '';
         mainNav.style.padding = '';
         mainNav.style.zIndex = '';
+      });
+    }
+  });
+</script>
+
+
+<!-- CHATBOT LOGIC -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var fab = document.getElementById('chatFab');
+    var panel = document.getElementById('chatPanel');
+    var closeBtn = document.getElementById('chatClose');
+    var input = document.getElementById('chatInput');
+    var sendBtn = document.getElementById('chatSend');
+    var body = document.getElementById('chatBody');
+    var quickBox = document.getElementById('chatQuick');
+
+    if (!fab || !panel) return;
+
+    fab.addEventListener('click', function() {
+      panel.classList.add('open');
+      fab.style.display = 'none';
+      if (body.children.length === 0) {
+        addMessage('Hi! I am the KS Trainings Assistant. How can I help you today?', 'bot');
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        panel.classList.remove('open');
+        fab.style.display = 'grid';
+      });
+    }
+
+    function addMessage(text, sender) {
+      var div = document.createElement('div');
+      div.className = 'msg-bubble ' + (sender === 'bot' ? 'bot' : 'user');
+      div.textContent = text;
+      body.appendChild(div);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    function handleSend() {
+      if (!input || !input.value.trim()) return;
+      var val = input.value.trim();
+      input.value = '';
+      addMessage(val, 'user');
+      
+      setTimeout(function() {
+        var lower = val.toLowerCase();
+        var reply = 'Thanks for your message. Please leave your details or WhatsApp us for more info!';
+        if (lower.includes('course')) {
+          reply = 'We offer comprehensive training in Cloud & DevOps, Data Engineering, UI/UX, AI, and more. Check our Courses page!';
+        } else if (lower.includes('demo')) {
+          reply = 'You can book a free demo by filling out the form on our website.';
+        } else if (lower.includes('contact') || lower.includes('phone') || lower.includes('whatsapp')) {
+          reply = 'You can WhatsApp or call us anytime at +91-8675539226.';
+        } else if (lower.includes('price') || lower.includes('cost') || lower.includes('fee')) {
+          reply = 'Our course fees vary. Please share your WhatsApp number or fill out the form so our counselor can assist you with pricing and offers.';
+        }
+        addMessage(reply, 'bot');
+      }, 600);
+    }
+
+    if (sendBtn) sendBtn.addEventListener('click', handleSend);
+    if (input) {
+      input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') handleSend();
+      });
+    }
+
+    if (quickBox) {
+      quickBox.addEventListener('click', function(e) {
+        if (e.target.tagName === 'BUTTON') {
+          var q = e.target.getAttribute('data-q');
+          if (q && input) {
+            input.value = q;
+            handleSend();
+          }
+        }
       });
     }
   });
