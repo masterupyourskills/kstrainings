@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- Security Headers & Anti-Clickjacking -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://script.google.com https://api.emailjs.com;">
+  <style id="antiClickjack">body{display:none !important;}</style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CorelDraw Vector Graphics Course | Master Vector Illustration - KS Trainings</title>
@@ -784,90 +797,7 @@
     }
   })();
 
-  // Chatbot logic
-  (function() {
-    var chatFab = document.getElementById('chatFab');
-    var chatPanel = document.getElementById('chatPanel');
-    var chatClose = document.getElementById('chatClose');
-    var chatInput = document.getElementById('chatInput');
-    var chatBody = document.getElementById('chatBody');
-    var chatSend = document.getElementById('chatSend');
-    var chatQuick = document.getElementById('chatQuick');
-    var chatGreeted = false;
-
-    if (!chatFab || !chatPanel || !chatClose || !chatInput || !chatBody || !chatSend) return;
-
-    function openChat() {
-      chatPanel.classList.add('active');
-      if (!chatGreeted) {
-        chatGreeted = true;
-        botSay("Hello! Welcome to KS Trainings. How can I help you with CorelDraw Vector Graphics today?");
-      }
-      chatInput.focus();
-    }
-    
-    chatFab.onclick = function() {
-      if (chatPanel.classList.contains('active')) {
-        chatPanel.classList.remove('active');
-      } else {
-        openChat();
-      }
-    };
-    
-    chatClose.onclick = function() {
-      chatPanel.classList.remove('active');
-    };
-
-    function addMsg(who, html) {
-      var row = document.createElement('div');
-      row.className = 'msg-row ' + who;
-      row.innerHTML = '<div class="msg-bubble">' + html + '</div>';
-      chatBody.appendChild(row);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-    
-    function botSay(html) {
-      setTimeout(function() { addMsg('bot', html); }, 400);
-    }
-
-    function botReply(text) {
-      var m = text.toLowerCase();
-      if(/course|demo|trial|free/.test(m))
-        return "You can book a free demo class for our CorelDraw Vector Graphics program. Fill the form on this page or message us directly on WhatsApp.";
-      if(/contact|call|phone|email|reach|whatsapp/.test(m))
-        return "Mobile/WhatsApp: +91-8675539226<br>Email: masterupyourskills@gmail.com. We are available 24/7!";
-      if(/support|on.?job|proxy|interview/.test(m))
-        return "We offer expert on-job and proxy support for CorelDraw Vector Graphics. Fill the form on this page to get a quote within 2 hours.";
-      if(/hi|hello|hey/.test(m))
-        return "Hello! How can I help you with CorelDraw Vector Graphics training or support today?";
-      return "Thank you for your message. For immediate support and free session bookings, please call/WhatsApp us at +91-8675539226.";
-    }
-
-    function sendChat(q){
-      if(!q.trim()) return;
-      addMsg('user', q.replace(/</g,'&lt;'));
-      chatInput.value = '';
-      botSay(botReply(q));
-    }
-    
-    chatSend.onclick = function() { sendChat(chatInput.value); };
-    chatInput.onkeypress = function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        sendChat(chatInput.value);
-      }
-    };
-    
-    if (chatQuick) {
-      chatQuick.onclick = function(e) {
-        var btn = e.target.closest('button');
-        if (btn) {
-          e.preventDefault();
-          sendChat(btn.getAttribute('data-q') || btn.textContent);
-        }
-      };
-    }
-  })();
+  
 </script>
 
 <!-- FORM SUBMISSION - Formspree + localStorage -->
@@ -975,7 +905,7 @@
   </script>
 
 <!-- ================= CONFETTI & POPUP ================= -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" integrity="sha384-HAH79XdRvHr6axVGh4xQWVCp14kcd32bNk4Xu0sHDHtFQ42n6BAM8ykvB47dGz6D" crossorigin="anonymous"></script>
 <style>
   .ks-success-overlay {
     position: fixed;
