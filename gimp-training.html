@@ -1114,7 +1114,7 @@
     if (!fab || !panel) return;
 
     fab.addEventListener('click', function() {
-      panel.classList.add('open');
+      panel.classList.add('open'); panel.classList.add('active'); panel.style.opacity = '1'; panel.style.pointerEvents = 'auto';
       fab.style.display = 'none';
       if (body.children.length === 0) {
         addMessage('Hi! I am the KS Trainings Assistant. How can I help you today?', 'bot');
@@ -1123,7 +1123,7 @@
 
     if (closeBtn) {
       closeBtn.addEventListener('click', function() {
-        panel.classList.remove('open');
+        panel.classList.remove('open'); panel.classList.remove('active'); panel.style.opacity = '0'; panel.style.pointerEvents = 'none';
         fab.style.display = 'grid';
       });
     }
