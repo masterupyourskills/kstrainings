@@ -1,5 +1,18 @@
-User-agent: *
-Allow: /
-Disallow: /admin.html
+# KSTrainings - Professional Robots.txt
+# Standard crawler rules to maximize crawl budget
 
+User-agent: *
+
+# Allow Google to crawl all public course content
+Allow: /
+
+# Disallow access to backend/private resources
+Disallow: /admin.html
+Disallow: /README.md
+
+# Block search result parameters to prevent duplicate content issues
+Disallow: /*?s=
+Disallow: /*?q=
+
+# XML Sitemap Location
 Sitemap: https://www.kstrainings.com/sitemap.xml

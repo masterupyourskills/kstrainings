@@ -1,328 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.kstrainings.com/abinitio-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/after-effects-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/agentic-ai-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ai-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/airflow-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/angular-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/api-testing-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/avid-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/aws-data-engineer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/aws-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/azure-data-engineer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/azure-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/canva-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ccna-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/coreldraw-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/courses.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/databricks-data-engineer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/davinci-resolve-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/devops-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/dotnet-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/elasticsearch-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/figma-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/filmora-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/final-cut-pro-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/gcp-data-engineer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/gcp-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/gen-ai-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/gimp-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://www.kstrainings.com/index.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>1.0</priority>
+    <loc>https://www.kstrainings.com/</loc>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/java-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/jmeter-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/lightroom-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/linux-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/manual-testing.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ml-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ms-fabric-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ms-sql-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/mysql-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/nodejs-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/on-job-support.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/oracle-sql-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/oracle-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/photoshop-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/php-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/playwright-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/powerbi-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/premiere-pro-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/proxy-interview-support.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/proxy-job-support.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/pyspark-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/python-analyst-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/python-data-engineer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/python-web-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/react-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/sas-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/sccm-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/selenium-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/snowflake-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/social-media-management.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/splunk-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/sql-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/tableau-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/ui-developer-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/video-editing.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.kstrainings.com/vmware-training.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-07-08T01:59:47+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
 </urlset>
