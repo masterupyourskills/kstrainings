@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Intake Form - KS Trainings</title>
+  <meta name="description" content="KS Trainings Student Onboarding and Intake Form. Start your IT journey with us today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; color: #1a2456; background: #f3f4f6; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    
+    /* Simple Header */
+    header { background: #fff; padding: 15px 20px; text-align: center; border-bottom: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+    .logo { display: inline-flex; align-items: center; gap: 12px; }
+    .logo img { height: 46px; width: 46px; border-radius: 50%; border: 2px solid #1a2456; }
+    .logo-name { font-size: 1.4rem; font-weight: 900; color: #1a2456; text-transform: uppercase; }
+
+    /* Form Container */
+    .container { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+    .form-box { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,.08); border-top: 5px solid #7c3aed; }
+    
+    .form-header { text-align: center; margin-bottom: 30px; }
+    .form-header h1 { font-size: 1.8rem; font-weight: 800; color: #1a2456; margin-bottom: 8px; }
+    .form-header p { color: #6b7280; font-size: 0.95rem; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 8px; }
+    .form-control { width: 100%; padding: 12px 16px; border: 1.5px solid #d1d5db; border-radius: 8px; font-family: inherit; font-size: 0.95rem; color: #1f2937; transition: border-color 0.2s; }
+    .form-control:focus { outline: none; border-color: #7c3aed; box-shadow: 0 0 0 3px rgba(124,58,237,0.1); }
+    
+    select.form-control { appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; }
+
+    .btn-submit { width: 100%; padding: 14px; background: #7c3aed; color: #fff; border: none; border-radius: 8px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 10px; }
+    .btn-submit:hover { background: #6d28d9; }
+    .btn-submit:disabled { background: #9ca3af; cursor: not-allowed; }
+
+    /* Success Message */
+    .success-box { display: none; text-align: center; padding: 40px; background: #ecfdf5; border: 1.5px solid #10b981; border-radius: 12px; margin-top: 20px; }
+    .success-box h2 { color: #065f46; font-size: 1.5rem; margin-bottom: 10px; }
+    .success-box p { color: #047857; margin-bottom: 20px; font-size: 1.05rem; }
+    .student-id { font-size: 2.2rem; font-weight: 900; color: #10b981; background: #fff; padding: 10px 20px; border-radius: 8px; display: inline-block; letter-spacing: 2px; border: 2px dashed #10b981; }
+
+    .loader { display: none; margin: 0 auto; border: 3px solid #f3f3f3; border-top: 3px solid #fff; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="ks-logo.jpg" alt="KS Trainings Logo">
+      <span class="logo-name">KS Trainings</span>
+    </a>
+  </header>
+
+  <div class="container">
+    <div class="form-box" id="formWrapper">
+      <div class="form-header">
+        <h1>Student Intake Form</h1>
+        <p>Please fill out your details to begin the onboarding process.</p>
+      </div>
+
+      <form id="intakeForm">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" class="form-control" required placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone / WhatsApp Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+91 XXXXX XXXXX">
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course Enrolling In</label>
+          <select id="course" name="course" class="form-control" required>
+            <option value="" disabled selected>Select a Course</option>
+            <option value="AWS Cloud Computing">AWS Cloud Computing</option>
+            <option value="DevOps Engineering">DevOps Engineering</option>
+            <option value="Salesforce Admin & Dev">Salesforce Admin & Dev</option>
+            <option value="Data Science & ML">Data Science & ML</option>
+            <option value="Python Full Stack">Python Full Stack</option>
+            <option value="Video Editing">Video Editing</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="education">Educational Background</label>
+          <input type="text" id="education" name="education" class="form-control" required placeholder="e.g. B.Tech / MCA / B.Sc">
+        </div>
+
+        <div class="form-group">
+          <label for="location">Current City / Location</label>
+          <input type="text" id="location" name="location" class="form-control" required placeholder="e.g. Hyderabad, India">
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span id="btnText">Submit & Generate ID</span>
+          <div class="loader" id="btnLoader"></div>
+        </button>
+      </form>
+    </div>
+
+    <!-- Success Message Block -->
+    <div class="success-box" id="successBox">
+      <h2>🎉 Welcome to KS Trainings!</h2>
+      <p>Your onboarding information has been successfully saved.</p>
+      <p style="font-weight:600; color:#065f46; margin-bottom:5px;">Your Official Student ID is:</p>
+      <div class="student-id" id="displayStudentId">KS----</div>
+      <p style="margin-top:20px; font-size:0.9rem;">Please save this ID for all future communications with your trainers and HR.</p>
+      <a href="index.html" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#10b981; color:#fff; border-radius:6px; font-weight:600;">Return to Home</a>
+    </div>
+  </div>
+
+  <script>
+    // WE WILL INSERT THE GOOGLE APPS SCRIPT URL HERE
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbww2-rSZTv1rffriaWgUSSUoHnjhVdRpiMeVLg0c02JAG6X7_oq9gVs__u_5NmoXa2ZTA/exec";
+
+    const form = document.getElementById('intakeForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoader = document.getElementById('btnLoader');
+    const formWrapper = document.getElementById('formWrapper');
+    const successBox = document.getElementById('successBox');
+    const displayStudentId = document.getElementById('displayStudentId');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if(WEB_APP_URL === "YOUR_WEB_APP_URL_HERE") {
+        alert("The backend is not connected yet. Please wait for the admin to finalize the Google Sheets connection.");
+        return;
+      }
+
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.style.display = 'none';
+      btnLoader.style.display = 'block';
+
+      // Collect Data
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(WEB_APP_URL, {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.status === 'success') {
+          // Hide Form, Show Success Box with generated ID
+          formWrapper.style.display = 'none';
+          successBox.style.display = 'block';
+          displayStudentId.innerText = result.studentId;
+        } else {
+          alert('Error saving data: ' + result.message);
+          submitBtn.disabled = false;
+          btnText.style.display = 'block';
+          btnLoader.style.display = 'none';
+        }
+      } catch (error) {
+        console.error('Error!', error.message);
+        alert('A network error occurred. Please try again.');
+        submitBtn.disabled = false;
+        btnText.style.display = 'block';
+        btnLoader.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

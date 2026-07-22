@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS Trainings Trailer</title>
+<style>
+  body {
+    margin: 0; padding: 0; background: #000; color: #fff;
+    font-family: 'Arial', sans-serif; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    height: 100vh; text-align: center;
+  }
+  .scene {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .scene.active { opacity: 1; z-index: 10; }
+  
+  h1 { font-size: 5vw; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin: 0; text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+  h2 { font-size: 3vw; color: #f59e0b; margin-top: 20px; }
+  
+  /* Scene 1: Glitch */
+  #s1 h1 { animation: glitch 0.2s infinite; color: #ff003c; }
+  
+  /* Scene 2: Zoom */
+  #s2 h1 { animation: zoomIn 3s forwards; color: #22d3ee; }
+  
+  /* Scene 3: Flash */
+  #s3 { background: radial-gradient(circle, #1a2456 0%, #000 100%); }
+  #s3 h1 { animation: pulse 1s infinite; }
+  
+  /* Scene 4: Final */
+  #s4 h1 { color: #f59e0b; font-size: 6vw; }
+  #s4 p { font-size: 2vw; margin-top: 20px; letter-spacing: 5px; }
+
+  @keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-5px, 5px) }
+    40% { transform: translate(-5px, -5px) }
+    60% { transform: translate(5px, 5px) }
+    80% { transform: translate(5px, -5px) }
+    100% { transform: translate(0) }
+  }
+  @keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1.2); opacity: 1; }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); text-shadow: 0 0 40px #fff; }
+    100% { transform: scale(1); }
+  }
+
+  #playBtn {
+    padding: 20px 40px; font-size: 24px; font-weight: bold;
+    background: #f59e0b; color: #000; border: none; border-radius: 10px;
+    cursor: pointer; z-index: 100;
+  }
+  #playBtn:hover { background: #fff; }
+</style>
+</head>
+<body>
+
+<button id="playBtn">CLICK TO PLAY TRAILER</button>
+
+<div id="s1" class="scene">
+  <h1>STUCK IN A DEAD-END JOB?</h1>
+</div>
+
+<div id="s2" class="scene">
+  <h1>THE IT INDUSTRY IS MOVING FAST</h1>
+  <h2>Don't get left behind.</h2>
+</div>
+
+<div id="s3" class="scene">
+  <h1>AWS • DevOps • Salesforce</h1>
+  <h2>Master the skills top companies demand.</h2>
+</div>
+
+<div id="s4" class="scene">
+  <h1>KS TRAININGS</h1>
+  <p>100% PLACEMENT ASSISTANCE</p>
+  <p style="color:#22d3ee; font-size: 1.5vw;">kstrainings.com</p>
+</div>
+
+<script>
+  document.getElementById('playBtn').addEventListener('click', function() {
+    this.style.display = 'none';
+    
+    const s1 = document.getElementById('s1');
+    const s2 = document.getElementById('s2');
+    const s3 = document.getElementById('s3');
+    const s4 = document.getElementById('s4');
+    
+    // Play sequence
+    setTimeout(() => { s1.classList.add('active'); }, 500);
+    setTimeout(() => { s1.classList.remove('active'); s2.classList.add('active'); }, 3500);
+    setTimeout(() => { s2.classList.remove('active'); s3.classList.add('active'); }, 7000);
+    setTimeout(() => { s3.classList.remove('active'); s4.classList.add('active'); }, 10500);
+  });
+</script>
+
+</body>
+</html>
