@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7-Day Data Engineering Training Program | KS Trainings</title>
+  <meta name="description" content="Industry Readiness Bootcamp - Logical Flow Version. Master Databricks, PySpark, Azure, and SQL for Enterprise Data Engineering.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #7c3aed;
+      --accent: #f59e0b;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+    
+    /* Typography */
+    h1, h2, h3, h4 { color: var(--primary); font-weight: 800; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; color: #fff; }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+    h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 4px; background: var(--secondary); border-radius: 2px; }
+    h3 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--secondary); }
+    p { margin-bottom: 1rem; }
+    ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 4rem 0; background: var(--bg-white); margin-bottom: 1rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .section-inner { padding: 0 3rem; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(30,58,138,0.95) 0%, rgba(124,58,237,0.95) 100%), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=80') center/cover;
+      color: #fff;
+      padding: 8rem 20px 7rem;
+      text-align: center;
+    }
+    .hero p.lead { font-size: 1.25rem; font-weight: 500; opacity: 0.95; margin-bottom: 2rem; }
+    .philosophy {
+      background: rgba(255, 255, 255, 0.15);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem 2rem;
+      border-radius: 0 8px 8px 0;
+      display: inline-block;
+      font-size: 1.1rem;
+      font-style: italic;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    th, td { padding: 12px 16px; border: 1px solid var(--border); text-align: left; }
+    th { background-color: var(--primary); color: white; font-weight: 600; }
+    tr:nth-child(even) { background-color: #f8fafc; }
+
+    /* Day Blocks */
+    .day-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      background: var(--bg-white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .day-header {
+      background: var(--bg-light);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .day-header h3 { margin: 0; color: var(--primary); font-size: 1.6rem; }
+    .day-quote { font-style: italic; color: var(--text-muted); margin-top: 0.5rem; }
+    .day-content { padding: 2rem; }
+    
+    /* Checklists */
+    .mastery-check {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .mastery-check h4 { color: #166534; margin-bottom: 1rem; }
+    .mastery-check ul { list-style-type: none; padding-left: 0; margin-bottom: 0; }
+    .mastery-check li { position: relative; padding-left: 28px; color: #15803d; font-weight: 500; }
+    .mastery-check li::before {
+      content: '✓'; position: absolute; left: 0; top: 0; color: #16a34a; font-weight: bold; font-size: 1.1rem;
+    }
+
+    /* Homework */
+    .homework-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1.5rem;
+      border-radius: 0 8px 8px 0;
+    }
+    .homework-box h4 { color: #1d4ed8; margin-bottom: 0.5rem; margin-top: 0;}
+
+    /* Mermaid Container */
+    .mermaid { text-align: center; margin: 2rem 0; background: #fff; padding: 2rem; border-radius: 8px; border: 1px solid #e2e8f0; }
+
+    /* Footer (Simple) */
+    .simple-footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="container">
+      <h1>IPT - 7 Day Data Engineering Training Program</h1>
+      <p class="lead">Industry Readiness Bootcamp – Logical Flow Version</p>
+      <div class="philosophy">
+        "Technology gets you hired. Professionalism builds your career."
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="margin-top: -3rem; position: relative; z-index: 10;">
+    
+    <!-- PREREQUISITES -->
+    <div class="section">
+      <div class="section-inner">
+        <h2>Program Prerequisites</h2>
+        <p>Before commencing Day 1, all trainees must demonstrate proficiency in the following foundational areas:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: 8px; border-left: 4px solid var(--secondary); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <strong style="font-size: 1.1rem; color: var(--primary);">Basic SQL</strong><br><span style="color:var(--text-muted); font-size:0.95rem; display:block; margin-top:4px;">(SELECT, WHERE, JOIN)</span>
+          </div>
+          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: 8px; border-left: 4px solid var(--secondary); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <strong style="font-size: 1.1rem; color: var(--primary);">Foundational Python</strong><br><span style="color:var(--text-muted); font-size:0.95rem; display:block; margin-top:4px;">(Variables, loops, functions)</span>
+          </div>
+          <div style="padding: 1.5rem; background: var(--bg-light); border-radius: 8px; border-left: 4px solid var(--secondary); box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <strong style="font-size: 1.1rem; color: var(--primary);">File Structures</strong><br><span style="color:var(--text-muted); font-size:0.95rem; display:block; margin-top:4px;">(Understanding of CSV, JSON)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPENDENCY MAP -->
+    <div class="section">
+      <div class="section-inner">
+        <h2>Dependency Map (At a Glance)</h2>
+        <p>The curriculum is designed as a strict logical progression. Each day is a prerequisite for the next.</p>
+        <div class="mermaid">
+          graph TD
+            D1[Day 1: Foundations] --> D2[Day 2: Infrastructure]
+            D2 --> D3[Day 3: Architecture]
+            D3 --> D4[Day 4: PySpark Coding]
+            D4 --> D5[Day 5: SQL Enterprise]
+            D5 --> D6[Day 6: Production]
+            D6 --> D7[Day 7: Interview Readiness]
+            
+            style D1 fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D2 fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D3 fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+            style D4 fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+            style D5 fill:#f5f3ff,stroke:#7c3aed,stroke-width:2px,color:#5b21b6
+            style D6 fill:#fefce8,stroke:#eab308,stroke-width:2px,color:#854d0e
+            style D7 fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#166534
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 1 – Data Engineering Fundamentals & Corporate Mindset</h3>
+        <div class="day-quote">"Technology gets you hired. Professionalism builds your career."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day First?</h4>
+        <p>This is the foundation day. We introduce no technical tools yet—just core concepts. Trainees must understand <em>why</em> they are learning before learning <em>how</em> to execute.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why in Day 1?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>What is Data Engineering?</td><td>None</td><td>Sets the context</td></tr>
+            <tr><td>End-to-End Pipeline</td><td>None</td><td>Gives the big picture</td></tr>
+            <tr><td>OLTP vs OLAP</td><td>None</td><td>Database fundamentals</td></tr>
+            <tr><td>Data Warehouse vs Data Lake</td><td>None</td><td>Storage fundamentals</td></tr>
+            <tr><td>ETL vs ELT</td><td>None</td><td>Processing fundamentals</td></tr>
+            <tr><td>Batch vs Streaming</td><td>None</td><td>Timing fundamentals</td></tr>
+            <tr><td>Modern Data Stack</td><td>None</td><td>Tool landscape</td></tr>
+            <tr><td>Career Roadmap</td><td>None</td><td>Motivation & direction</td></tr>
+            <tr><td>Agile, Scrum, Sprint</td><td>None</td><td>Corporate foundation</td></tr>
+            <tr><td>Team Hierarchy</td><td>None</td><td>Who's who in the team</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 2:</h4>
+          <ul>
+            <li>Explain ETL vs ELT with a real-world example.</li>
+            <li>Draw a basic end-to-end pipeline diagram.</li>
+            <li>Demonstrate understanding of Agile roles (Product Manager, Tech Lead, Developer).</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Given a CSV file, write pseudo-code or a basic PySpark script to perform ELT into Bronze → Silver → Gold tables.</li>
+            <li>Draw an end-to-end data pipeline diagram for a daily file ingestion scenario.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 2 – Project Lifecycle & Azure Data Platform</h3>
+        <div class="day-quote">"Understand the business before writing code."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Second?</h4>
+        <p>Before touching Databricks or PySpark, trainees must understand how requirements become code (HLD → LLD), where data lives (Azure Blob), what data looks like, and how it is organized (Medallion Architecture).</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Requirement Gathering</td><td>Understands pipeline (Day 1)</td><td>Business need → Solution</td></tr>
+            <tr><td>HLD & LLD</td><td>Understands pipeline (Day 1)</td><td>Design phase</td></tr>
+            <tr><td>Azure Blob Storage</td><td>Understands storage (Day 1)</td><td>Where data sits</td></tr>
+            <tr><td>Storage Accounts, Containers</td><td>Knows Azure basics</td><td>Accessing data</td></tr>
+            <tr><td>File Formats: CSV, JSON, Parquet, Delta</td><td>Knows data types</td><td>Reading data in Spark</td></tr>
+            <tr><td>Medallion Architecture</td><td>Knows pipeline (Day 1)</td><td>Organizing data</td></tr>
+            <tr><td>Jira, User Stories, Acceptance Criteria</td><td>Knows Agile (Day 1)</td><td>Task management</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 3:</h4>
+          <ul>
+            <li>Explain the distinct purposes of the Bronze, Silver, and Gold layers.</li>
+            <li>Describe the complete Azure Blob Storage flow.</li>
+            <li>Create a complete Jira user story including valid acceptance criteria.</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Document why the Medallion Architecture is utilized in production data pipelines.</li>
+            <li>Explain the end-to-end Azure Blob Storage flow for the daily ingestion scenario.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 3 – Databricks & Spark Architecture</h3>
+        <div class="day-quote">"Build scalable solutions."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Third?</h4>
+        <p>Writing efficient PySpark code requires a fundamental understanding of how Spark operates (Driver/Executor), where it runs (Clusters), how data is optimally stored (Delta Lake), and how data governance is applied (Unity Catalog).</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Why Databricks?</td><td>Knows Modern Data Stack (Day 1)</td><td>Why this tool?</td></tr>
+            <tr><td>Spark Architecture</td><td>Knows distributed computing</td><td>How it works</td></tr>
+            <tr><td>Driver & Executor</td><td>Understands Spark Core</td><td>Core execution concepts</td></tr>
+            <tr><td>Cluster Types</td><td>Knows Spark Arch</td><td>Where code runs</td></tr>
+            <tr><td>Databricks Notebooks</td><td>Knows clusters</td><td>How to code</td></tr>
+            <tr><td>Unity Catalog</td><td>Knows storage (Day 2)</td><td>Data governance</td></tr>
+            <tr><td>Delta Lake</td><td>Knows Parquet (Day 2)</td><td>Advanced storage</td></tr>
+            <tr><td>ACID, Schema Evolution</td><td>Knows Parquet (Day 2)</td><td>Why Delta is better</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 4:</h4>
+          <ul>
+            <li>Accurately explain the difference between a Driver and an Executor.</li>
+            <li>Compare Job Clusters vs All-Purpose Clusters.</li>
+            <li>Describe key Delta Lake features including ACID properties and Schema Evolution.</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Compare Job Clusters vs All-Purpose Clusters. Detail specific scenarios when you would use each.</li>
+            <li>Write a brief analysis on why Delta Lake is preferred over standard Parquet files for production pipelines.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 4 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 4 – PySpark Development Essentials</h3>
+        <div class="day-quote">"Write clean and optimized code."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Fourth?</h4>
+        <p>By Day 4, trainees have mastered the Foundation (Day 1), Infrastructure (Day 2), and Architecture (Day 3). They are now equipped to write functional, optimized code that leverages the platform effectively.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DataFrames API</td><td>Knows SQL/Python</td><td>Coding interface</td></tr>
+            <tr><td>Lazy Evaluation</td><td>Knows Spark Arch (Day 3)</td><td>How Spark optimizes</td></tr>
+            <tr><td>Transformations vs Actions</td><td>Knows Lazy Evaluation</td><td>Coding patterns</td></tr>
+            <tr><td>Joins, Aggregations, Window Functions</td><td>Knows SQL (basic)</td><td>Data manipulation</td></tr>
+            <tr><td>Built-in Functions vs UDFs</td><td>Knows Python</td><td>Performance matters</td></tr>
+            <tr><td>Caching, Repartition vs Coalesce</td><td>Knows Executors (Day 3)</td><td>Optimization</td></tr>
+            <tr><td>Error Handling, Logging</td><td>Knows Python</td><td>Production-ready code</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 5:</h4>
+          <ul>
+            <li>Successfully write a PySpark script that reads a CSV file and writes to Delta format.</li>
+            <li>Explain the technical scenarios for when to use Cache.</li>
+            <li>Implement at least one Window Function in code.</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Identify a slow-running Spark job profile and decide where to implement caching versus checkpointing.</li>
+            <li>Write a PySpark script incorporating proper try-except error handling blocks for a daily file ingestion process.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 5 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 5 – SQL for Enterprise Projects</h3>
+        <div class="day-quote">"SQL is every Data Engineer's language."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Fifth?</h4>
+        <p>Enterprise SQL builds directly upon PySpark DataFrames (Day 4). Within Databricks, engineers utilize PySpark for complex programmatic transformations (Day 4) and SQL for robust reporting, analysis, and Slowly Changing Dimension (SCD) logic.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Advanced Joins (Anti, Semi)</td><td>Knows basic Joins (Day 4)</td><td>Production use cases</td></tr>
+            <tr><td>CTEs, Subqueries</td><td>Knows SQL</td><td>Code readability</td></tr>
+            <tr><td>Window Functions</td><td>Knows Window in PySpark (Day 4)</td><td>Reinforcement</td></tr>
+            <tr><td>MERGE Statement</td><td>Knows Delta (Day 3)</td><td>Upsert logic</td></tr>
+            <tr><td>Incremental Load</td><td>Knows Delta & Pipeline (Day 1/2)</td><td>Daily ingestion</td></tr>
+            <tr><td>SCD Type 1 & Type 2</td><td>Knows MERGE</td><td>Customer dimensions</td></tr>
+            <tr><td>Query Optimization, Execution Plans</td><td>Knows Performance (Day 4)</td><td>SQL tuning</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 6:</h4>
+          <ul>
+            <li>Write a functional MERGE statement implementing SCD Type 2 logic.</li>
+            <li>Utilize ROW_NUMBER to effectively deduplicate a dataset.</li>
+            <li>Explain an enterprise incremental load strategy.</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Write a complete MERGE statement to handle SCD Type 2 changes on a mock customer dimension table.</li>
+            <li>Create a ROW_NUMBER query designed to deduplicate a daily transaction table prior to ingestion.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 6 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 6 – Production Support & Project Delivery</h3>
+        <div class="day-quote">"Production is where engineering matters."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Sixth?</h4>
+        <p>All previously written code must operate reliably in a production environment. This crucial stage requires the synthesis of Day 4 (Code), Day 5 (Modeling), Day 2 (Infrastructure), and Day 3 (Architecture).</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Databricks Workflows</td><td>Knows clusters (Day 3)</td><td>Scheduling</td></tr>
+            <tr><td>Monitoring & Alerting</td><td>Knows error handling (Day 4)</td><td>Production health</td></tr>
+            <tr><td>Pipeline Failures, Retry Logic</td><td>Knows error handling (Day 4)</td><td>Fault tolerance</td></tr>
+            <tr><td>Data Validation & Quality</td><td>Knows transformations (Day 4/5)</td><td>Trusted data</td></tr>
+            <tr><td>Incident Management, ServiceNow</td><td>Knows Agile (Day 1)</td><td>Corporate processes</td></tr>
+            <tr><td>Git & Deployment</td><td>Knows environments (Day 2/3)</td><td>Code promotion</td></tr>
+          </tbody>
+        </table>
+
+        <div class="mastery-check">
+          <h4>Must-Have Mastery Checks Before Day 7:</h4>
+          <ul>
+            <li>Successfully schedule and configure a Databricks Workflow job.</li>
+            <li>Set up and test alerting mechanisms for pipeline failures.</li>
+            <li>Document a standard code deployment flow utilizing Git.</li>
+          </ul>
+        </div>
+
+        <div class="homework-box">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Design a fault-tolerant pipeline architecture featuring retry logic and failure alerts.</li>
+            <li>Document a complete deployment workflow outlining a standard Git branching strategy for your team.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>Day 7 – Interview & Career Readiness</h3>
+        <div class="day-quote">"Preparation creates confidence."</div>
+      </div>
+      <div class="day-content">
+        <h4>Why This Day Seventh?</h4>
+        <p>This is the consolidation day. Trainees possess the requisite technical and theoretical foundations across all domains. Day 7 focuses strictly on presenting these acquired skills confidently and professionally to secure offers.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prerequisite</th>
+              <th>Why Here?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>End-to-End Project Walkthrough</td><td>ALL previous days</td><td>Integration</td></tr>
+            <tr><td>Performance Optimization (Broadcast Join, AQE, Z-ORDER)</td><td>Day 3, Day 4</td><td>Advanced tuning</td></tr>
+            <tr><td>Interview Questions</td><td>ALL previous days</td><td>Assessment</td></tr>
+            <tr><td>Resume Building</td><td>Day 1 corporate</td><td>Job applications</td></tr>
+            <tr><td>LinkedIn, STAR Method</td><td>Day 1 corporate</td><td>Personal branding</td></tr>
+            <tr><td>Salary Negotiation, AI Tools</td><td>Day 1 corporate</td><td>Career growth</td></tr>
+          </tbody>
+        </table>
+
+        <div class="homework-box" style="margin-top: 1.5rem;">
+          <h4>Daily Action Items (Homework)</h4>
+          <ol>
+            <li>Prepare a concise, 5-minute project explanation utilizing the STAR (Situation, Task, Action, Result) method.</li>
+            <li>List and articulate the top 5 Databricks optimizations essential for production-level jobs.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW DIAGRAM & CHECKLISTS -->
+    <div class="section">
+      <div class="section-inner">
+        <h2>Summary Flow Diagram</h2>
+        <div class="mermaid">
+          graph TD
+            D1[Day 1: Foundations<br/><i>Knows ETL, OLTP, Agile</i>] --> D2[Day 2: Azure + Design<br/><i>Knows Blob, Medallion, Jira</i>]
+            D2 --> D3[Day 3: Databricks Architecture<br/><i>Knows Spark, Delta, Unity</i>]
+            D3 --> D4[Day 4: PySpark Coding<br/><i>Knows DataFrames, Optimizations</i>]
+            D4 --> D5[Day 5: SQL Enterprise<br/><i>Knows MERGE, SCD, Incremental</i>]
+            D5 --> D6[Day 6: Production<br/><i>Knows Workflows, Alerts, Deployment</i>]
+            D6 --> D7[Day 7: Interview Readiness<br/><i>Industry-Ready Professional</i>]
+        </div>
+
+        <h3 style="margin-top: 3rem;">Compliance Checklist for Trainees</h3>
+        <p>By the end of each day, trainees must check off the following competencies:</p>
+        <table>
+          <thead>
+            <tr><th>Day</th><th>Must-Have Mastery Check</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Can explain pipeline & Agile roles</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>2</td><td>Can design Medallion layers & write Jira story</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>3</td><td>Can describe Spark architecture & Delta Lake</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>4</td><td>Can write a full PySpark transformation</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>5</td><td>Can write SCD Type 2 MERGE & incremental load</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>6</td><td>Can schedule, monitor, and deploy a pipeline</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+            <tr><td>7</td><td>Can present a project using STAR</td><td style="text-align: center; color: var(--border);">[ ]</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="margin-top: 3rem;">Daily Session Structure</h3>
+        <p>Each day strictly follows a 45-minute session plan to maximize retention:</p>
+        <table>
+          <thead>
+            <tr><th>Time</th><th>Activity</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2 min</td><td><strong style="color:var(--primary);">Motivational Quote</strong></td><td>Set the tone and mindset</td></tr>
+            <tr><td>5 min</td><td><strong style="color:var(--primary);">Corporate Concepts</strong></td><td>Build professional skills</td></tr>
+            <tr><td>25 min</td><td><strong style="color:var(--primary);">Technical Session</strong></td><td>Core Data Engineering knowledge</td></tr>
+            <tr><td>8 min</td><td><strong style="color:var(--primary);">Live Demo</strong></td><td>Hands-on application</td></tr>
+            <tr><td>5 min</td><td><strong style="color:var(--primary);">Interview Tips</strong></td><td>Career readiness</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- BONUS & PROJECT -->
+    <div class="section">
+      <div class="section-inner">
+        <h2>Bonus Topics & Capstone Project</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+          <div>
+            <h3>Bonus Topics (Self-Study)</h3>
+            <p>Advanced topics provided for continued learning post-bootcamp:</p>
+            <ul style="color: var(--text-muted);">
+              <li>Unity Catalog & RBAC (Role-Based Access Control)</li>
+              <li>Azure Key Vault Integration</li>
+              <li>CI/CD with Azure DevOps</li>
+              <li>Change Data Capture (CDC)</li>
+              <li>Data Lineage & Governance</li>
+              <li>Spark UI Performance Tuning</li>
+              <li>Delta Time Travel</li>
+              <li>OPTIMIZE, VACUUM, Z-ORDER Deep Dive</li>
+              <li>Handling Skew Joins & Broadcast Join Internals</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Sample Capstone Project</h3>
+            <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border);">
+              <p><strong>Title:</strong> Daily Sales Pipeline</p>
+              <p><strong>Objective:</strong> Build a complete ETL pipeline that ingests 50 CSV files from Azure Blob Storage, processes them using PySpark in Databricks, and delivers clean, aggregated data for business reporting.</p>
+              <p style="margin-top: 1rem;"><strong>Core Requirements:</strong></p>
+              <ol style="padding-left: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+                <li><strong>Bronze Layer:</strong> Raw CSV ingestion with schema validation.</li>
+                <li><strong>Silver Layer:</strong> Data cleaning, deduplication, and transformation.</li>
+                <li><strong>Gold Layer:</strong> Aggregated sales metrics (daily, by region, product).</li>
+                <li><strong>Orchestration:</strong> Schedule pipeline daily via Databricks Workflows.</li>
+                <li><strong>Monitoring:</strong> Set up alerts for pipeline failures.</li>
+                <li><strong>Documentation:</strong> HLD, LLD, and user guide.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="mastery-check" style="margin-top: 3rem; background: #fffbeb; border-color: #fde68a;">
+          <h4 style="color: #b45309;">Final Assessment Checklist</h4>
+          <ul>
+            <li style="color: #92400e;">I can explain the end-to-end data pipeline.</li>
+            <li style="color: #92400e;">I can write efficient PySpark transformations.</li>
+            <li style="color: #92400e;">I can optimize Spark jobs for performance.</li>
+            <li style="color: #92400e;">I can create and schedule Databricks Workflows.</li>
+            <li style="color: #92400e;">I can use advanced SQL for enterprise data analysis.</li>
+            <li style="color: #92400e;">I can actively participate in Agile ceremonies.</li>
+            <li style="color: #92400e;">I can use Jira for task tracking and story creation.</li>
+            <li style="color: #92400e;">I can troubleshoot and resolve production issues.</li>
+            <li style="color: #92400e;">I can present my Capstone project utilizing the STAR method.</li>
+            <li style="color: #92400e;">I have finalized my Data Engineer resume and LinkedIn profile.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End Main Container -->
+
+  <footer class="simple-footer">
+    &copy; 2026 KS Trainings - Data Engineering Bootcamp. All rights reserved.
+  </footer>
+
+  <!-- Include Mermaid JS for rendering Flow Diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</body>
+</html>
