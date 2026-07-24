@@ -185,6 +185,13 @@
         <h4>Why This Day First?</h4>
         <p>This is the foundation day. We introduce no technical tools yet—just core concepts. Trainees must understand <em>why</em> they are learning before learning <em>how</em> to execute.</p>
         
+        <div class="mermaid" style="background:#f8fafc; border:none; margin: 1.5rem 0; padding:1.5rem;">
+          graph LR
+            A[Zero Knowledge<br/>Focus: Syntax] --> B[Junior<br/>Focus: Code]
+            B --> C[Senior Data Engineer<br/>Focus: Business Value]
+            style C fill:#dcfce3,stroke:#16a34a,stroke-width:2px
+        </div>
+        
         <table>
           <thead>
             <tr>
@@ -236,6 +243,15 @@
         <h4>Why This Day Second?</h4>
         <p>Before touching Databricks or PySpark, trainees must understand how requirements become code (HLD → LLD), where data lives (Azure Blob), what data looks like, and how it is organized (Medallion Architecture).</p>
         
+        <div class="mermaid" style="background:#f8fafc; border:none; margin: 1.5rem 0; padding:1.5rem;">
+          graph LR
+            A[(Bronze<br/>Raw Data)] --> B[(Silver<br/>Cleansed)]
+            B --> C[(Gold<br/>Aggregated)]
+            style A fill:#fefce8,stroke:#a16207,stroke-width:2px
+            style B fill:#f1f5f9,stroke:#475569,stroke-width:2px
+            style C fill:#fef08a,stroke:#eab308,stroke-width:2px
+        </div>
+        
         <table>
           <thead>
             <tr>
@@ -283,6 +299,14 @@
       <div class="day-content">
         <h4>Why This Day Third?</h4>
         <p>Writing efficient PySpark code requires a fundamental understanding of how Spark operates (Driver/Executor), where it runs (Clusters), how data is optimally stored (Delta Lake), and how data governance is applied (Unity Catalog).</p>
+        
+        <div class="mermaid" style="background:#f8fafc; border:none; margin: 1.5rem 0; padding:1.5rem;">
+          graph TD
+            D[Spark Driver Node] --> E1[Executor 1]
+            D --> E2[Executor 2]
+            D --> E3[Executor N]
+            style D fill:#eff6ff,stroke:#2563eb,stroke-width:2px
+        </div>
         
         <table>
           <thead>
@@ -396,6 +420,7 @@
             <tr><td>MERGE Statement</td><td>Knows Delta (Day 3)</td><td>Upsert logic</td></tr>
             <tr><td>Incremental Load</td><td>Knows Delta & Pipeline (Day 1/2)</td><td>Daily ingestion</td></tr>
             <tr><td>SCD Type 1 & Type 2</td><td>Knows MERGE</td><td>Customer dimensions</td></tr>
+            <tr><td>Data Security & PII Masking</td><td>Knows SQL</td><td>Enterprise compliance</td></tr>
             <tr><td>Query Optimization, Execution Plans</td><td>Knows Performance (Day 4)</td><td>SQL tuning</td></tr>
           </tbody>
         </table>
@@ -443,9 +468,18 @@
             <tr><td>Pipeline Failures, Retry Logic</td><td>Knows error handling (Day 4)</td><td>Fault tolerance</td></tr>
             <tr><td>Data Validation & Quality</td><td>Knows transformations (Day 4/5)</td><td>Trusted data</td></tr>
             <tr><td>Incident Management, ServiceNow</td><td>Knows Agile (Day 1)</td><td>Corporate processes</td></tr>
-            <tr><td>Git & Deployment</td><td>Knows environments (Day 2/3)</td><td>Code promotion</td></tr>
+            <tr><td>Git & Deployment (CI/CD)</td><td>Knows environments (Day 2/3)</td><td>Code promotion</td></tr>
+            <tr><td>Databricks Cost Optimization</td><td>Knows clusters (Day 3)</td><td>Cloud budget management</td></tr>
           </tbody>
         </table>
+
+        <div class="mermaid" style="background:#f8fafc; border:none; margin: 1.5rem 0; padding:1.5rem;">
+          graph LR
+            A[Dev Workspace] -->|Commit| B(GitHub PR)
+            B -->|Approve| C[QA Workspace]
+            C -->|Release| D[Prod Workspace]
+            style D fill:#dcfce3,stroke:#16a34a,stroke-width:2px
+        </div>
 
         <div class="mastery-check">
           <h4>Must-Have Mastery Checks Before Day 7:</h4>
