@@ -751,24 +751,29 @@
 
     document.querySelectorAll('.fade-up, .fade-right').forEach(el => observer.observe(el));
 
-    // Dynamic Timer Logic (Today/Tomorrow at 7PM)
+    // Dynamic Timer Logic (Date based on 7PM IST threshold)
     function updateDynamicTimer() {
       const timerEl = document.getElementById('dynamic-timer');
       if (!timerEl) return;
       
       const now = new Date();
-      // Get current hour in IST (UTC+5:30)
+      // Get current time in IST (UTC+5:30)
       const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
       const istDate = new Date(utc + (3600000 * 5.5));
       const currentHourIST = istDate.getHours();
       
-      let dayText = "TODAY";
+      // If it's already past 7 PM IST, show Tomorrow's date
       if (currentHourIST >= 19) {
-        // If it's already past 7 PM IST, show Tomorrow
-        dayText = "TOMORROW";
+        istDate.setDate(istDate.getDate() + 1);
       }
       
-      timerEl.innerHTML = `⏳ Webinar starts <span style="color:#fff;">${dayText} at 7:00 PM IST</span>`;
+      const d = istDate.getDate();
+      const m = istDate.getMonth() + 1;
+      const y = istDate.getFullYear();
+      
+      const dateString = `${d}-${m}-${y}`;
+      
+      timerEl.innerHTML = `⏳ Webinar starts on <span style="color:#fff;">${dateString} at 7:00 PM IST</span>`;
     }
     
     updateDynamicTimer();
