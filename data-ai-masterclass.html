@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Data & AI Architect Masterclass | KS Trainings</title>
+  <meta name="description" content="Learn Data Engineering, Data Analysis, Machine Learning, and Gen AI from an 8-year industry expert in a live 1-hour session.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #09090b;
+      --bg-card: #18181b;
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #3b82f6; /* Blue */
+      --accent-glow: rgba(59, 130, 246, 0.5);
+      --accent-purple: #8b5cf6; /* Purple for AI */
+      --success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+    a { text-decoration: none; }
+    
+    /* Global Container */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navigation (Minimal to avoid distractions) */
+    nav { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
+    nav img { height: 40px; }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      z-index: -1; opacity: 0.4;
+    }
+    .badge {
+      display: inline-block; background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);
+      padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; border: 1px solid rgba(139, 92, 246, 0.2); margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 span { background: linear-gradient(135deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p.lead { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+    
+    .cta-container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+    .btn-main {
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800;
+      padding: 18px 40px; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s;
+      border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    }
+    .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5); }
+    .guarantee { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+    
+    /* Instructor Section */
+    .expert-section { padding: 60px 0; background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .expert-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+    .expert-img-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+    .expert-img-box img { width: 100%; max-width: 200px; border-radius: 50%; border: 4px solid var(--accent); }
+    .expert-content h2 { font-size: 2.2rem; margin-bottom: 15px; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .tech-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; }
+    
+    /* Curriculum Modules */
+    .curriculum { padding: 80px 0; }
+    .curriculum h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+    .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .module-card {
+      background: var(--bg-card); padding: 30px; border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+    }
+    .module-card:hover { border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .module-icon { font-size: 2rem; margin-bottom: 15px; }
+    .module-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--accent); }
+    .module-card ul { list-style: none; }
+    .module-card ul li { margin-bottom: 10px; padding-left: 24px; position: relative; color: var(--text-muted); font-size: 0.95rem; }
+    .module-card ul li::before { content: '✓'; color: var(--success); position: absolute; left: 0; font-weight: bold; }
+
+    /* Footer CTA */
+    .footer-cta { padding: 80px 0; text-align: center; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%); }
+    .footer-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .price-box { font-size: 3rem; font-weight: 900; font-family: 'Outfit'; margin-bottom: 30px; color: #fff; }
+    .price-box strike { color: var(--text-muted); font-size: 1.5rem; font-weight: 500; margin-right: 15px; }
+
+    @media (max-width: 768px) {
+      .expert-grid, .module-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <h2 style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">KS TRAININGS</h2>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="badge">Live 1-Hour Exclusive Masterclass</div>
+      <h1>Become a High-Paid<br><span>Data & AI Architect</span></h1>
+      <p class="lead">Stop being just another developer. Learn how to bridge the gap between Big Data Engineering, Data Analysis, and Generative AI from an industry expert with 8 years of hardcore experience.</p>
+      
+      <div class="cta-container">
+        <!-- Add your payment link below in the href -->
+        <a href="#" class="btn-main">Register Now for Just ₹49</a>
+        <div class="guarantee">
+          <span>🔒 Secure Payment</span> • <span>🔴 Live Session</span> • <span>⏳ Limited Seats</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Expert Section -->
+  <section class="expert-section">
+    <div class="container">
+      <div class="expert-grid">
+        <div class="expert-img-box">
+          <!-- Placeholder for your face -->
+          <svg style="width:100px; fill:var(--text-muted); opacity:0.5;" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          <h3 style="margin-top: 15px;">Lead Instructor</h3>
+        </div>
+        <div class="expert-content">
+          <h2>Why Learn From Me?</h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">I am not a theorist. I am a hands-on practitioner with exactly <strong>8 years of deep industry experience</strong> building massive data pipelines, executing complex analytics, and integrating modern AI architectures.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Databricks</span>
+            <span class="tech-tag">PySpark</span>
+            <span class="tech-tag">Snowflake</span>
+            <span class="tech-tag">Azure ADF</span>
+            <span class="tech-tag">MS Fabric</span>
+            <span class="tech-tag">Power BI</span>
+            <span class="tech-tag">Gen AI & ML</span>
+            <span class="tech-tag">Python & SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section class="curriculum">
+    <div class="container">
+      <h2>What You Will Master in 1 Hour</h2>
+      <div class="module-grid">
+        
+        <!-- Module 1 -->
+        <div class="module-card">
+          <div class="module-icon">⚙️</div>
+          <h3>Data Engineering</h3>
+          <ul>
+            <li>The modern Medallion Architecture (Bronze, Silver, Gold).</li>
+            <li>Processing massive datasets with PySpark & Databricks.</li>
+            <li>Cloud storage integration: ADLS Gen2 & S3.</li>
+            <li>Building scalable pipelines with Azure Data Factory.</li>
+          </ul>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card">
+          <div class="module-icon">📊</div>
+          <h3>Data Analysis & BI</h3>
+          <ul>
+            <li>Advanced SQL query optimization strategies.</li>
+            <li>Transforming raw data into business intelligence.</li>
+            <li>Building high-impact dashboards using Power BI.</li>
+            <li>Extracting insights that drive corporate decisions.</li>
+          </ul>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card">
+          <div class="module-icon">🧠</div>
+          <h3>Machine Learning & Gen AI</h3>
+          <ul>
+            <li>How Data Engineering feeds Machine Learning models.</li>
+            <li>Understanding the Generative AI revolution.</li>
+            <li>How to integrate LLMs into corporate data workflows.</li>
+            <li>Future-proofing your career as an AI Architect.</li>
+          </ul>
+        </div>
+
+        <!-- Bonus Module -->
+        <div class="module-card" style="border-color: var(--accent-purple); background: rgba(139, 92, 246, 0.05);">
+          <div class="module-icon">🚀</div>
+          <h3 style="color: var(--accent-purple);">The Career Roadmap</h3>
+          <ul>
+            <li>How to crack Data Engineering & AI interviews.</li>
+            <li>Resume building for Senior-level salaries.</li>
+            <li>The exact path from zero to 8-Figure Data Architect.</li>
+            <li>Exclusive Q&A session at the end.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="footer-cta">
+    <div class="container">
+      <h2>Ready to upgrade your career?</h2>
+      <div class="price-box">
+        <strike>₹1,999</strike> ₹49
+      </div>
+      <!-- Add your payment link below in the href -->
+      <a href="#" class="btn-main">Claim Your Spot Now</a>
+      <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;">100% Value. No Fluff. Pure Industry Knowledge.</p>
+    </div>
+  </section>
+
+</body>
+</html>
