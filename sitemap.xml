@@ -390,4 +390,10 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://www.kstrainings.com/data-engineering-free-webinar.html</loc>
+    <lastmod>2026-08-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+  </url>
 </urlset>
