@@ -918,7 +918,12 @@
       const mm = m.toString().padStart(2, '0');
       const ss = s.toString().padStart(2, '0');
       
-      timerEl.innerHTML = `⏳ Next webinar starts in <span style="color:#fff; font-family: monospace; font-size: 1.1em;">${hh}h ${mm}m ${ss}s</span>`;
+      const d = targetIst.getDate();
+      const mo = targetIst.getMonth() + 1;
+      const y = targetIst.getFullYear();
+      const dateStr = `${d}-${mo}-${y}`;
+      
+      timerEl.innerHTML = `⏳ Next webinar starts in <span style="color:#fff; font-family: monospace; font-size: 1.1em;">${hh}h ${mm}m ${ss}s</span> on ${dateStr} at 7:00 PM IST`;
     }
     
     setInterval(updateCountdownTimer, 1000);
