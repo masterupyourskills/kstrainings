@@ -284,14 +284,15 @@
       .timeline::before { left: 16px; }
       .timeline-dot { left: 10px; }
       .timeline-item { padding-left: 50px; }
+      .top-contact-bar .contact-inner { justify-content: center !important; gap: 10px !important; font-size: 0.75rem; flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
 
   <!-- Fixed Top Contact Bar -->
-  <div style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(5,5,5,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 9999; padding: 10px 20px; font-size: 0.85rem; display: flex; justify-content: center; align-items: center;">
-    <div style="max-width: 1050px; width: 100%; display: flex; justify-content: flex-end; gap: 20px; font-weight: 500;">
+  <div class="top-contact-bar" style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(5,5,5,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 9999; padding: 10px 20px; font-size: 0.85rem; display: flex; justify-content: center; align-items: center;">
+    <div class="contact-inner" style="max-width: 1050px; width: 100%; display: flex; justify-content: flex-end; gap: 20px; font-weight: 500;">
       <span><i class="fas fa-phone-alt" style="color: var(--accent-blue); margin-right: 6px;"></i> +91-8675539226</span>
       <span><i class="fas fa-envelope" style="color: var(--accent-pink); margin-right: 6px;"></i> info@kstrainings.com</span>
     </div>
@@ -369,61 +370,13 @@
   </header>
 
   <!-- Live Marquee -->
-  <div class="marquee-container fade-up">
+  <div class="marquee-container fade-up" style="margin-bottom: 60px;">
     <div class="marquee-content">
       <span>SQL</span> <span class="highlight">PYSPARK</span> <span>AZURE DATA FACTORY</span> <span class="highlight">DATABRICKS</span> <span>DELTA LAKE</span> <span>LAKEHOUSE</span> <span>DATA WAREHOUSING</span>
       <!-- Duplicate for infinite scroll -->
       <span>SQL</span> <span class="highlight">PYSPARK</span> <span>AZURE DATA FACTORY</span> <span class="highlight">DATABRICKS</span> <span>DELTA LAKE</span> <span>LAKEHOUSE</span> <span>DATA WAREHOUSING</span>
     </div>
   </div>
-
-  <!-- Placement & Outcomes Metrics -->
-  <section class="section-padding" style="padding-bottom: 0;">
-    <div class="container fade-up">
-      <div class="grid-4 tilt-grid" style="text-align: center; margin-bottom: 40px;">
-        <div class="info-card tilt-card" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.05);">
-          <h4 style="font-size: 2.5rem; color: #34d399; font-weight: 900; margin-bottom: 5px;">500+</h4>
-          <p style="font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">Career Transitions</p>
-        </div>
-        <div class="info-card tilt-card" style="border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.05);">
-          <h4 style="font-size: 2.5rem; color: #60a5fa; font-weight: 900; margin-bottom: 5px;">9 Days</h4>
-          <p style="font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">Avg Placement Time</p>
-        </div>
-        <div class="info-card tilt-card" style="border-color: rgba(139,92,246,0.3); background: rgba(139,92,246,0.05);">
-          <h4 style="font-size: 2.5rem; color: #a78bfa; font-weight: 900; margin-bottom: 5px;">350%</h4>
-          <p style="font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">Up To Salary Hike</p>
-        </div>
-        <div class="info-card tilt-card" style="border-color: rgba(236,72,153,0.3); background: rgba(236,72,153,0.05);">
-          <h4 style="font-size: 2.5rem; color: #f472b6; font-weight: 900; margin-bottom: 5px;">24/7</h4>
-          <p style="font-weight: 600; text-transform: uppercase; font-size: 0.9rem;">Technical Support</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Program Highlights -->
-  <section class="section-padding">
-    <div class="container fade-up">
-      <div class="glass-panel" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; border-color: rgba(255,255,255,0.1);">
-        <div style="flex: 1; min-width: 200px;">
-          <h4 style="font-size: 1.3rem; color: #fff; margin-bottom: 8px;">⏱️ 100+ Hours Live</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Master the top Data Engineering tools in live, interactive sessions.</p>
-        </div>
-        <div style="flex: 1; min-width: 200px;">
-          <h4 style="font-size: 1.3rem; color: #fff; margin-bottom: 8px;">💻 80+ Hours Labs</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Learn by doing. Heavy focus on hands-on practical exercises.</p>
-        </div>
-        <div style="flex: 1; min-width: 200px;">
-          <h4 style="font-size: 1.3rem; color: #fff; margin-bottom: 8px;">🚀 8+ Real Projects</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Build a portfolio of production-grade architectures.</p>
-        </div>
-        <div style="flex: 1; min-width: 200px;">
-          <h4 style="font-size: 1.3rem; color: #fff; margin-bottom: 8px;">♾️ Lifetime Access</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Attend multiple batches until you achieve your dream goal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- The Problem -->
   <section class="section-padding">
