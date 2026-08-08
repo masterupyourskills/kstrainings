@@ -252,6 +252,25 @@
     /* Mobile Sticky CTA */
     .mobile-cta-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); padding: 15px; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; text-align: center; }
 
+    /* --- ANIMATIONS & DYNAMIC ELEMENTS --- */
+    .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    
+    .fade-right { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+
+    /* Infinite Scrolling Marquee */
+    .marquee-container { overflow: hidden; white-space: nowrap; padding: 20px 0; background: rgba(0,0,0,0.5); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); margin-top: 40px; }
+    .marquee-content { display: inline-block; animation: marquee 30s linear infinite; font-family: 'Outfit'; font-size: 1.5rem; font-weight: 800; color: rgba(255,255,255,0.2); }
+    .marquee-content span { margin: 0 30px; text-transform: uppercase; letter-spacing: 2px; }
+    .marquee-content span.highlight { color: var(--accent-blue); opacity: 0.8; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
     @media (max-width: 850px) {
       .hero h1 { font-size: 2.2rem; }
       .arrow-scribble, .arrow-text, .hero-pipeline { display: none; }
@@ -282,9 +301,9 @@
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="container">
-      <div style="background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); color: #fbcfe8; padding: 10px 20px; border-radius: 12px; display: inline-block; margin-bottom: 25px; font-weight: 600; box-shadow: 0 0 20px rgba(236, 72, 153, 0.2); font-family: 'Outfit';">
-        ⏳ Webinar starts on 10-08-2026 at 7:00 PM IST
+    <div class="container fade-up">
+      <div id="dynamic-timer" style="background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); color: #fbcfe8; padding: 10px 20px; border-radius: 12px; display: inline-block; margin-bottom: 25px; font-weight: 600; box-shadow: 0 0 20px rgba(236, 72, 153, 0.2); font-family: 'Outfit';">
+        ⏳ Webinar starts TODAY at 7:00 PM IST
       </div>
       <br>
       <div class="badge">★ 8+ Years Industry Experience</div>
@@ -335,10 +354,19 @@
     </div>
   </header>
 
+  <!-- Live Marquee -->
+  <div class="marquee-container fade-up">
+    <div class="marquee-content">
+      <span>SQL</span> <span class="highlight">PYSPARK</span> <span>AZURE DATA FACTORY</span> <span class="highlight">DATABRICKS</span> <span>DELTA LAKE</span> <span>LAKEHOUSE</span> <span>DATA WAREHOUSING</span>
+      <!-- Duplicate for infinite scroll -->
+      <span>SQL</span> <span class="highlight">PYSPARK</span> <span>AZURE DATA FACTORY</span> <span class="highlight">DATABRICKS</span> <span>DELTA LAKE</span> <span>LAKEHOUSE</span> <span>DATA WAREHOUSING</span>
+    </div>
+  </div>
+
   <!-- The Problem -->
   <section class="section-padding">
     <div class="container">
-      <div class="glass-panel problem-box">
+      <div class="glass-panel problem-box fade-up">
         <h2>Confused About Where To Start With Data Engineering?</h2>
         <p style="color: #a1a1aa; font-weight: 300; margin-bottom: 30px; text-transform: none; font-size: 1.1rem;">Many beginners try to learn SQL, Python, Spark, Azure and Databricks separately without understanding how the technologies connect.</p>
         
@@ -351,12 +379,12 @@
   <!-- Core Stack (3D Tilt Cards) -->
   <section class="section-padding">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title fade-up">
         <h2>Master the Core Data Engineering Stack</h2>
       </div>
       
       <div class="stack-grid">
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-1">
           <span class="num">01. SQL</span>
           <h3>Database Fundamentals</h3>
           <p>Build strong SQL and data transformation fundamentals.</p>
@@ -366,17 +394,17 @@
           <h3>Programming</h3>
           <p>Use Python for automation and data processing.</p>
         </div>
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-2">
           <span class="num">03. PySpark</span>
           <h3>Big Data</h3>
           <p>Process and transform large-scale datasets.</p>
         </div>
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-3">
           <span class="num">04. Azure Data Factory</span>
           <h3>Orchestration</h3>
           <p>Build and orchestrate cloud data pipelines.</p>
         </div>
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-4">
           <span class="num">05. ADLS Gen2</span>
           <h3>Cloud Storage</h3>
           <p>Understand cloud data storage and organization.</p>
@@ -386,12 +414,12 @@
           <h3>Compute</h3>
           <p>Build scalable data processing workloads.</p>
         </div>
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-2">
           <span class="num">07. Delta Lake</span>
           <h3>Lakehouse</h3>
           <p>Build reliable lakehouse data layers.</p>
         </div>
-        <div class="module-card tilt-card">
+        <div class="module-card tilt-card fade-up stagger-3">
           <span class="num">08. Data Warehousing</span>
           <h3>Analytics</h3>
           <p>Understand analytical data models and warehouse concepts.</p>
@@ -403,21 +431,21 @@
   <!-- Roadmap -->
   <section class="section-padding" id="roadmap">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title fade-up">
         <h2>Your Data Engineering Roadmap</h2>
         <p>A structured path from fundamentals to real-world Data Engineering.</p>
       </div>
       
       <div class="timeline">
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 01</div><div class="timeline-content"><h3>SQL</h3><p>Build strong SQL fundamentals and learn how to work with relational data.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 02</div><div class="timeline-content"><h3>Python</h3><p>Learn Python concepts required for data processing and automation.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 03</div><div class="timeline-content"><h3>PySpark</h3><p>Learn distributed data processing and large-scale transformations.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 04</div><div class="timeline-content"><h3>Azure Storage</h3><p>Learn Blob Storage and ADLS Gen2 for cloud data storage.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 05</div><div class="timeline-content"><h3>Azure Data Factory</h3><p>Learn ingestion, orchestration and pipeline automation.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 06</div><div class="timeline-content"><h3>Databricks</h3><p>Transform and process data using Databricks and PySpark.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 07</div><div class="timeline-content"><h3>Delta Lake</h3><p>Build reliable Bronze, Silver and Gold data layers.</p></div></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-step">STEP 08</div><div class="timeline-content"><h3>Data Warehousing</h3><p>Understand dimensional modeling and analytical data consumption.</p></div></div>
-        <div class="timeline-item final">
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 01</div><div class="timeline-content"><h3>SQL</h3><p>Build strong SQL fundamentals and learn how to work with relational data.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 02</div><div class="timeline-content"><h3>Python</h3><p>Learn Python concepts required for data processing and automation.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 03</div><div class="timeline-content"><h3>PySpark</h3><p>Learn distributed data processing and large-scale transformations.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 04</div><div class="timeline-content"><h3>Azure Storage</h3><p>Learn Blob Storage and ADLS Gen2 for cloud data storage.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 05</div><div class="timeline-content"><h3>Azure Data Factory</h3><p>Learn ingestion, orchestration and pipeline automation.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 06</div><div class="timeline-content"><h3>Databricks</h3><p>Transform and process data using Databricks and PySpark.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 07</div><div class="timeline-content"><h3>Delta Lake</h3><p>Build reliable Bronze, Silver and Gold data layers.</p></div></div>
+        <div class="timeline-item fade-right"><div class="timeline-dot"></div><div class="timeline-step">STEP 08</div><div class="timeline-content"><h3>Data Warehousing</h3><p>Understand dimensional modeling and analytical data consumption.</p></div></div>
+        <div class="timeline-item final fade-up">
           <div class="timeline-dot"></div>
           <div class="timeline-step">STEP 09</div>
           <div class="timeline-content">
@@ -432,12 +460,12 @@
   <!-- Architecture -->
   <section class="section-padding">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title fade-up">
         <h2>Don't Just Learn Tools. Build a Complete Data Pipeline.</h2>
         <p>Learn how individual technologies work together inside a real-world architecture.</p>
       </div>
 
-      <div class="glass-panel" style="margin-bottom: 40px; text-align: center;">
+      <div class="glass-panel fade-up" style="margin-bottom: 40px; text-align: center;">
         <div class="arch-flow">
           <div class="arch-node"><h4>Source System</h4><p>Raw Data</p></div>
           <div class="arch-arrow">→</div>
@@ -452,10 +480,10 @@
       </div>
       
       <div class="arch-features">
-        <div class="feat-card tilt-card">Data Ingestion</div>
-        <div class="feat-card tilt-card">Data Transformation</div>
-        <div class="feat-card tilt-card">Data Lakehouse</div>
-        <div class="feat-card tilt-card">Data Warehouse</div>
+        <div class="feat-card tilt-card fade-up stagger-1">Data Ingestion</div>
+        <div class="feat-card tilt-card fade-up stagger-2">Data Transformation</div>
+        <div class="feat-card tilt-card fade-up stagger-3">Data Lakehouse</div>
+        <div class="feat-card tilt-card fade-up stagger-4">Data Warehouse</div>
       </div>
     </div>
   </section>
@@ -463,32 +491,32 @@
   <!-- Audience & Credibility -->
   <section class="section-padding">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title fade-up">
         <h2>Who Should Join?</h2>
       </div>
       <div class="grid-4 tilt-grid" style="margin-bottom: 80px;">
-        <div class="info-card tilt-card"><h4>Beginners</h4><p>Starting a career in Data Engineering.</p></div>
-        <div class="info-card tilt-card"><h4>SQL Developers</h4><p>Want to move from SQL into Data Engineering.</p></div>
-        <div class="info-card tilt-card"><h4>Data Analysts</h4><p>Want to transition into Data Engineering.</p></div>
-        <div class="info-card tilt-card"><h4>Working Professionals</h4><p>Want to strengthen modern cloud skills.</p></div>
+        <div class="info-card tilt-card fade-up stagger-1"><h4>Beginners</h4><p>Starting a career in Data Engineering.</p></div>
+        <div class="info-card tilt-card fade-up stagger-2"><h4>SQL Developers</h4><p>Want to move from SQL into Data Engineering.</p></div>
+        <div class="info-card tilt-card fade-up stagger-3"><h4>Data Analysts</h4><p>Want to transition into Data Engineering.</p></div>
+        <div class="info-card tilt-card fade-up stagger-4"><h4>Working Professionals</h4><p>Want to strengthen modern cloud skills.</p></div>
       </div>
 
-      <div class="section-title">
+      <div class="section-title fade-up">
         <h2>Learn From Industry Experience</h2>
         <p>The focus is not on memorizing tools. The goal is to understand how modern Data Engineering systems are designed and implemented.</p>
       </div>
       <div class="grid-4 tilt-grid">
-        <div class="info-card tilt-card" style="border-color: rgba(255,255,255,0.2);"><h4>8+ Years Industry Experience</h4></div>
-        <div class="info-card tilt-card" style="border-color: rgba(255,255,255,0.2);"><h4>Practical Learning</h4></div>
-        <div class="info-card tilt-card" style="border-color: rgba(255,255,255,0.2);"><h4>Real-World Architecture</h4></div>
-        <div class="info-card tilt-card" style="border-color: rgba(255,255,255,0.2);"><h4>Project-Based Training</h4></div>
+        <div class="info-card tilt-card fade-up stagger-1" style="border-color: rgba(255,255,255,0.2);"><h4>8+ Years Industry Experience</h4></div>
+        <div class="info-card tilt-card fade-up stagger-2" style="border-color: rgba(255,255,255,0.2);"><h4>Practical Learning</h4></div>
+        <div class="info-card tilt-card fade-up stagger-3" style="border-color: rgba(255,255,255,0.2);"><h4>Real-World Architecture</h4></div>
+        <div class="info-card tilt-card fade-up stagger-4" style="border-color: rgba(255,255,255,0.2);"><h4>Project-Based Training</h4></div>
       </div>
     </div>
   </section>
 
   <!-- Webinar Conversion -->
   <section class="section-padding">
-    <div class="container">
+    <div class="container fade-up">
       <div class="glass-panel webinar-cta">
         <h2>Start With Our Free Live Webinar</h2>
         <p class="sub">Understand the complete roadmap before committing to a full training program.</p>
@@ -711,6 +739,40 @@
         }, 2500);
       });
     }
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up, .fade-right').forEach(el => observer.observe(el));
+
+    // Dynamic Timer Logic (Today/Tomorrow at 7PM)
+    function updateDynamicTimer() {
+      const timerEl = document.getElementById('dynamic-timer');
+      if (!timerEl) return;
+      
+      const now = new Date();
+      // Get current hour in IST (UTC+5:30)
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const istDate = new Date(utc + (3600000 * 5.5));
+      const currentHourIST = istDate.getHours();
+      
+      let dayText = "TODAY";
+      if (currentHourIST >= 19) {
+        // If it's already past 7 PM IST, show Tomorrow
+        dayText = "TOMORROW";
+      }
+      
+      timerEl.innerHTML = `⏳ Webinar starts <span style="color:#fff;">${dayText} at 7:00 PM IST</span>`;
+    }
+    
+    updateDynamicTimer();
+
   </script>
 </body>
 </html>
