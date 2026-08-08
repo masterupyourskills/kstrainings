@@ -5,138 +5,261 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Data & AI Architect Masterclass | KS Trainings</title>
   <meta name="description" content="Learn Data Engineering, Data Analysis, Machine Learning, and Gen AI from an 8-year industry expert in a live 1-hour session.">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Kalam:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-dark: #09090b;
-      --bg-card: #18181b;
+      --bg-dark: #050505;
       --text-main: #f4f4f5;
       --text-muted: #a1a1aa;
-      --accent: #3b82f6; /* Blue */
-      --accent-glow: rgba(59, 130, 246, 0.5);
-      --accent-purple: #8b5cf6; /* Purple for AI */
-      --success: #10b981;
+      --accent-blue: #3b82f6; 
+      --accent-purple: #8b5cf6; 
+      --accent-pink: #ec4899;
+      --glass-bg: rgba(25, 25, 30, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg-dark); 
+      color: var(--text-main); 
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
     h1, h2, h3 { font-family: 'Outfit', sans-serif; }
     a { text-decoration: none; }
     
-    /* Global Container */
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    /* 3D Background Space & Floating Orbs */
+    .bg-orbs {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: -1; overflow: hidden; pointer-events: none;
+    }
+    .orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.5; animation: float 20s infinite alternate ease-in-out; }
+    .orb-1 { width: 500px; height: 500px; background: var(--accent-purple); top: -10%; left: -10%; }
+    .orb-2 { width: 400px; height: 400px; background: var(--accent-blue); bottom: -10%; right: -5%; animation-delay: -5s; }
+    .orb-3 { width: 300px; height: 300px; background: var(--accent-pink); top: 40%; left: 40%; opacity: 0.2; animation-delay: -10s; }
+    
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(100px, 50px) scale(1.2); }
+    }
 
-    /* Navigation (Minimal to avoid distractions) */
-    nav { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; }
-    nav img { height: 40px; }
+    /* Global Container */
+    .container { max-width: 1050px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 10; }
+
+    /* Navigation */
+    nav { padding: 30px 0; text-align: center; }
+    .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; font-family: 'Outfit'; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     /* Hero Section */
     .hero {
-      padding: 80px 0 60px;
+      padding: 60px 0 80px;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-      z-index: -1; opacity: 0.4;
     }
     .badge {
-      display: inline-block; background: rgba(139, 92, 246, 0.1); color: var(--accent-purple);
-      padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; border: 1px solid rgba(139, 92, 246, 0.2); margin-bottom: 24px;
+      display: inline-block; background: rgba(139, 92, 246, 0.15); color: #d8b4fe;
+      padding: 8px 20px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; border: 1px solid rgba(139, 92, 246, 0.3); margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(139,92,246,0.2);
     }
-    .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
-    .hero h1 span { background: linear-gradient(135deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p.lead { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+    .hero h1 { 
+      font-size: clamp(2.8rem, 6vw, 5rem); 
+      font-weight: 900; 
+      line-height: 1.05; 
+      margin-bottom: 25px; 
+      position: relative;
+      display: inline-block;
+    }
+    .hero h1 span { 
+      background: linear-gradient(135deg, #60a5fa, #c084fc, #f472b6); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      background-size: 200% auto;
+      animation: gradientShift 5s ease infinite;
+    }
     
-    .cta-container { display: flex; flex-direction: column; align-items: center; gap: 15px; }
+    /* Hand-drawn scribble under AI Architect */
+    .hero-scribble {
+      position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80%; max-width: 400px;
+      opacity: 0.8; z-index: -1; pointer-events: none;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero p.lead { font-size: 1.3rem; color: #d4d4d8; max-width: 700px; margin: 0 auto 40px; font-weight: 300; }
+    
+    .cta-container { display: flex; flex-direction: column; align-items: center; gap: 15px; position: relative; }
+    
     .btn-main {
-      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
-      color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800;
-      padding: 18px 40px; border-radius: 12px; transition: transform 0.2s, box-shadow 0.2s;
-      border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
-      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800;
+      padding: 20px 45px; border-radius: 16px; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255,255,255,0.2); cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4), inset 0 2px 0 rgba(255,255,255,0.2);
+      position: relative; overflow: hidden;
     }
-    .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5); }
-    .guarantee { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+    .btn-main::after {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(30deg) translate(-100%, -100%); transition: 0.8s;
+    }
+    .btn-main:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(139, 92, 246, 0.6), inset 0 2px 0 rgba(255,255,255,0.2); }
+    .btn-main:hover::after { transform: rotate(30deg) translate(100%, 100%); }
     
-    /* Instructor Section */
-    .expert-section { padding: 60px 0; background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    /* Human Touch Arrow */
+    .arrow-scribble { position: absolute; right: -80px; top: 10px; width: 60px; transform: rotate(15deg); opacity: 0.7; }
+    .arrow-text { position: absolute; right: -130px; top: -15px; font-family: 'Kalam', cursive; font-size: 1.2rem; color: #fbbf24; transform: rotate(5deg); }
+
+    .guarantee { font-size: 0.9rem; color: var(--text-muted); margin-top: 10px; }
+    
+    /* Glassmorphism Sections */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Instructor Section (Human Built) */
+    .expert-section { margin: 60px 0; padding: 50px; }
     .expert-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
-    .expert-img-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-    .expert-img-box img { width: 100%; max-width: 200px; border-radius: 50%; border: 4px solid var(--accent); }
-    .expert-content h2 { font-size: 2.2rem; margin-bottom: 15px; }
-    .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    .tech-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 500; }
+    .expert-img-box { text-align: center; position: relative; }
+    .expert-img-box img { width: 100%; max-width: 220px; border-radius: 20px; filter: grayscale(20%) contrast(1.1); }
+    .expert-content h2 { font-size: 2.2rem; margin-bottom: 15px; font-weight: 800; }
     
-    /* Curriculum Modules */
-    .curriculum { padding: 80px 0; }
-    .curriculum h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-    .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-    .module-card {
-      background: var(--bg-card); padding: 30px; border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+    /* Conversational Text */
+    .human-text { font-size: 1.15rem; color: #e4e4e7; font-weight: 300; line-height: 1.7; }
+    .human-text strong { color: #fff; font-weight: 600; }
+    
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .tech-tag { 
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); 
+      padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+      transition: 0.3s;
     }
-    .module-card:hover { border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-    .module-icon { font-size: 2rem; margin-bottom: 15px; }
-    .module-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--accent); }
+    .tech-tag:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); border-color: var(--accent-purple); }
+    
+    /* Curriculum Modules (3D Tilt Cards) */
+    .curriculum { margin: 80px 0; }
+    .curriculum h2 { text-align: center; font-size: 2.8rem; margin-bottom: 60px; font-weight: 800; }
+    .module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; perspective: 1000px; }
+    
+    .module-card {
+      background: var(--glass-bg); padding: 40px 30px; border-radius: 20px;
+      border: 1px solid var(--glass-border); 
+      transform-style: preserve-3d;
+      transition: transform 0.1s; /* For JS Tilt */
+    }
+    
+    /* Inside card elements floating slightly forward */
+    .module-card > * { transform: translateZ(30px); }
+    
+    .module-icon { font-size: 2.5rem; margin-bottom: 20px; display: inline-block; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+    .module-card h3 { font-size: 1.5rem; margin-bottom: 20px; color: #fff; font-weight: 700; letter-spacing: 0.5px; }
     .module-card ul { list-style: none; }
-    .module-card ul li { margin-bottom: 10px; padding-left: 24px; position: relative; color: var(--text-muted); font-size: 0.95rem; }
-    .module-card ul li::before { content: '✓'; color: var(--success); position: absolute; left: 0; font-weight: bold; }
+    .module-card ul li { margin-bottom: 12px; padding-left: 28px; position: relative; color: #d4d4d8; font-size: 1rem; }
+    .module-card ul li::before { content: '→'; color: var(--accent-blue); position: absolute; left: 0; font-weight: bold; font-family: Arial; }
 
-    /* Footer CTA */
-    .footer-cta { padding: 80px 0; text-align: center; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%); }
-    .footer-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
-    .price-box { font-size: 3rem; font-weight: 900; font-family: 'Outfit'; margin-bottom: 30px; color: #fff; }
-    .price-box strike { color: var(--text-muted); font-size: 1.5rem; font-weight: 500; margin-right: 15px; }
+    /* Footer CTA with Hand-drawn price circle */
+    .footer-cta { margin: 80px 0 100px; text-align: center; padding: 60px 40px; position: relative; overflow: hidden; }
+    .footer-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(139,92,246,0.1) 0%, transparent 70%); pointer-events: none; }
+    
+    .footer-cta h2 { font-size: 2.8rem; margin-bottom: 20px; z-index: 2; position: relative; }
+    .price-box { 
+      font-size: 4rem; font-weight: 900; font-family: 'Outfit'; color: #fff;
+      display: inline-flex; align-items: center; justify-content: center; position: relative;
+      margin: 20px 0 40px; z-index: 2;
+    }
+    .price-box strike { color: var(--text-muted); font-size: 1.8rem; font-weight: 500; margin-right: 20px; }
+    
+    .circle-scribble {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 140%; height: 140%; z-index: -1;
+    }
+    .circle-scribble path {
+      stroke: var(--accent-pink); stroke-width: 3; fill: none; stroke-linecap: round;
+      stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawCircle 2s ease forwards 0.5s;
+    }
+    
+    @keyframes drawCircle { to { stroke-dashoffset: 0; } }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       .expert-grid, .module-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.2rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .arrow-scribble, .arrow-text { display: none; }
+      .expert-section { padding: 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Animated Deep Space Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
   <nav>
     <div class="container">
-      <h2 style="font-size: 1.5rem; font-weight: 900; letter-spacing: 1px;">KS TRAININGS</h2>
+      <div class="logo">KS TRAININGS</div>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <header class="hero">
     <div class="container">
       <div class="badge">Live 1-Hour Exclusive Masterclass</div>
-      <h1>Become a High-Paid<br><span>Data & AI Architect</span></h1>
+      
+      <h1>Become a High-Paid<br><span>Data & AI Architect</span>
+        <!-- Hand drawn underline SVG -->
+        <svg class="hero-scribble" viewBox="0 0 300 20" preserveAspectRatio="none">
+          <path d="M5,15 Q150,0 295,15" stroke="var(--accent-purple)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </h1>
+      
       <p class="lead">Stop being just another developer. Learn how to bridge the gap between Big Data Engineering, Data Analysis, and Generative AI from an industry expert with 8 years of hardcore experience.</p>
       
       <div class="cta-container">
-        <!-- Add your payment link below in the href -->
+        
+        <span class="arrow-text">Almost full!</span>
+        <svg class="arrow-scribble" viewBox="0 0 50 50">
+          <path d="M10,10 Q25,30 15,45 M15,45 L5,35 M15,45 L25,38" stroke="#fbbf24" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <!-- ADD RAZORPAY LINK HERE -->
         <a href="#" class="btn-main">Register Now for Just ₹49</a>
+        
         <div class="guarantee">
-          <span>🔒 Secure Payment</span> • <span>🔴 Live Session</span> • <span>⏳ Limited Seats</span>
+          <span>🔒 Secure Checkout</span> • <span>🔴 Live Session</span>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Expert Section -->
-  <section class="expert-section">
-    <div class="container">
+  <!-- Instructor Section (Human Touch) -->
+  <section class="container">
+    <div class="glass-panel expert-section">
       <div class="expert-grid">
         <div class="expert-img-box">
-          <!-- Placeholder for your face -->
-          <svg style="width:100px; fill:var(--text-muted); opacity:0.5;" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-          <h3 style="margin-top: 15px;">Lead Instructor</h3>
+          <!-- Placeholder avatar if no image exists -->
+          <div style="width:180px; height:180px; background:rgba(255,255,255,0.05); border-radius:50%; margin:0 auto; display:flex; align-items:center; justify-content:center; border:2px dashed rgba(255,255,255,0.2);">
+            <span style="font-size:4rem;">👋</span>
+          </div>
         </div>
         <div class="expert-content">
-          <h2>Why Learn From Me?</h2>
-          <p style="color: var(--text-muted); font-size: 1.05rem;">I am not a theorist. I am a hands-on practitioner with exactly <strong>8 years of deep industry experience</strong> building massive data pipelines, executing complex analytics, and integrating modern AI architectures.</p>
+          <h2>Hey, I'm Karthik.</h2>
+          <p class="human-text">
+            I'm not a theorist or an academic. I've spent the last <strong>8 years in the trenches</strong> building massive data pipelines, executing complex analytics, and integrating modern AI architectures for enterprise companies. <br><br>
+            In this 1-hour session, I am going to show you exactly how the corporate world *actually* uses data and AI, and the exact roadmap you need to follow to command a senior-level salary.
+          </p>
           <div class="tech-stack">
             <span class="tech-tag">Databricks</span>
             <span class="tech-tag">PySpark</span>
@@ -144,84 +267,116 @@
             <span class="tech-tag">Azure ADF</span>
             <span class="tech-tag">MS Fabric</span>
             <span class="tech-tag">Power BI</span>
-            <span class="tech-tag">Gen AI & ML</span>
-            <span class="tech-tag">Python & SQL</span>
+            <span class="tech-tag">Gen AI</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Curriculum -->
-  <section class="curriculum">
-    <div class="container">
-      <h2>What You Will Master in 1 Hour</h2>
-      <div class="module-grid">
-        
-        <!-- Module 1 -->
-        <div class="module-card">
-          <div class="module-icon">⚙️</div>
-          <h3>Data Engineering</h3>
-          <ul>
-            <li>The modern Medallion Architecture (Bronze, Silver, Gold).</li>
-            <li>Processing massive datasets with PySpark & Databricks.</li>
-            <li>Cloud storage integration: ADLS Gen2 & S3.</li>
-            <li>Building scalable pipelines with Azure Data Factory.</li>
-          </ul>
-        </div>
-
-        <!-- Module 2 -->
-        <div class="module-card">
-          <div class="module-icon">📊</div>
-          <h3>Data Analysis & BI</h3>
-          <ul>
-            <li>Advanced SQL query optimization strategies.</li>
-            <li>Transforming raw data into business intelligence.</li>
-            <li>Building high-impact dashboards using Power BI.</li>
-            <li>Extracting insights that drive corporate decisions.</li>
-          </ul>
-        </div>
-
-        <!-- Module 3 -->
-        <div class="module-card">
-          <div class="module-icon">🧠</div>
-          <h3>Machine Learning & Gen AI</h3>
-          <ul>
-            <li>How Data Engineering feeds Machine Learning models.</li>
-            <li>Understanding the Generative AI revolution.</li>
-            <li>How to integrate LLMs into corporate data workflows.</li>
-            <li>Future-proofing your career as an AI Architect.</li>
-          </ul>
-        </div>
-
-        <!-- Bonus Module -->
-        <div class="module-card" style="border-color: var(--accent-purple); background: rgba(139, 92, 246, 0.05);">
-          <div class="module-icon">🚀</div>
-          <h3 style="color: var(--accent-purple);">The Career Roadmap</h3>
-          <ul>
-            <li>How to crack Data Engineering & AI interviews.</li>
-            <li>Resume building for Senior-level salaries.</li>
-            <li>The exact path from zero to 8-Figure Data Architect.</li>
-            <li>Exclusive Q&A session at the end.</li>
-          </ul>
-        </div>
-
+  <!-- Curriculum (3D Tilt Cards) -->
+  <section class="container curriculum">
+    <h2>What We Cover in 60 Minutes</h2>
+    <div class="module-grid">
+      
+      <!-- Module 1 -->
+      <div class="module-card tilt-card">
+        <div class="module-icon">⚙️</div>
+        <h3>Data Engineering</h3>
+        <ul>
+          <li>The modern Medallion Architecture (Bronze, Silver, Gold).</li>
+          <li>Processing massive datasets with PySpark & Databricks.</li>
+          <li>Cloud storage integration: ADLS Gen2 & S3.</li>
+          <li>Building scalable pipelines with Azure Data Factory.</li>
+        </ul>
       </div>
+
+      <!-- Module 2 -->
+      <div class="module-card tilt-card">
+        <div class="module-icon">📊</div>
+        <h3>Data Analysis & BI</h3>
+        <ul>
+          <li>Advanced SQL query optimization strategies.</li>
+          <li>Transforming raw data into business intelligence.</li>
+          <li>Building high-impact dashboards using Power BI.</li>
+          <li>Extracting insights that drive corporate decisions.</li>
+        </ul>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="module-card tilt-card">
+        <div class="module-icon">🧠</div>
+        <h3>Machine Learning & Gen AI</h3>
+        <ul>
+          <li>How Data Engineering feeds Machine Learning models.</li>
+          <li>Understanding the Generative AI revolution.</li>
+          <li>How to integrate LLMs into corporate data workflows.</li>
+          <li>Future-proofing your career as an AI Architect.</li>
+        </ul>
+      </div>
+
+      <!-- Bonus Module -->
+      <div class="module-card tilt-card" style="background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.3);">
+        <div class="module-icon">🚀</div>
+        <h3 style="color: #d8b4fe;">The Career Roadmap</h3>
+        <ul>
+          <li>How to crack Data Engineering & AI interviews.</li>
+          <li>Resume building for Senior-level salaries.</li>
+          <li>The exact path from zero to 8-Figure Data Architect.</li>
+          <li>Exclusive live Q&A session at the end.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer CTA -->
-  <section class="footer-cta">
-    <div class="container">
+  <section class="container">
+    <div class="glass-panel footer-cta">
       <h2>Ready to upgrade your career?</h2>
+      
       <div class="price-box">
-        <strike>₹1,999</strike> ₹49
+        <strike>₹1,999</strike> 
+        <span>₹49</span>
+        
+        <!-- Animated hand-drawn circle -->
+        <svg class="circle-scribble" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path d="M50,5 C80,5 95,25 90,45 C80,60 20,60 10,40 C5,25 20,5 50,5 Z" />
+        </svg>
       </div>
-      <!-- Add your payment link below in the href -->
-      <a href="#" class="btn-main">Claim Your Spot Now</a>
-      <p style="margin-top: 20px; color: var(--text-muted); font-size: 0.9rem;">100% Value. No Fluff. Pure Industry Knowledge.</p>
+      
+      <br>
+      
+      <!-- ADD RAZORPAY LINK HERE -->
+      <a href="#" class="btn-main" style="display: inline-block;">Claim Your Spot Now</a>
+      
+      <p style="margin-top: 25px; color: var(--text-muted); font-size: 0.95rem;">100% Value. No Fluff. Pure Industry Knowledge.</p>
     </div>
   </section>
+
+  <!-- 3D Vanilla Tilt Logic -->
+  <script>
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -10; // Max tilt 10deg
+        const rotateY = ((x - centerX) / centerX) * 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transition = 'none';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+      });
+    });
+  </script>
 
 </body>
 </html>
