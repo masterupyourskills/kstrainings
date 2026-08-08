@@ -682,9 +682,27 @@
       const msg = document.getElementById('successMsg');
       btn.textContent = 'Processing...';
       btn.disabled = true;
+      
+      const KS_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx4Ip9MnWcXhBuPr-wJ6SvYev2skqSpWdGBaz8mlccyGNF6H4VN1db28DVmdc7twp7I/exec';
+      const payload = {
+        page_name: form.getAttribute('data-page') || 'Data Engineering Career Path - 88 Webinar',
+        name: form.elements['name'] ? form.elements['name'].value.trim() : '',
+        email: form.elements['email'] ? form.elements['email'].value.trim() : '',
+        phone: form.elements['phone'] ? form.elements['phone'].value.trim() : '',
+        course_service: form.elements['course'] ? form.elements['course'].value : '',
+        support_type: form.elements['support_type'] ? form.elements['support_type'].value : '',
+        description: 'Experience: ' + (form.elements['message'] ? form.elements['message'].value : '') + ' | SQL Knowledge: ' + (form.elements['sql_knowledge'] ? form.elements['sql_knowledge'].value : ''),
+        business_name: ''
+      };
 
-      // Call the main submitForm logic if needed, but for now we simulate the webhook
-      setTimeout(() => {
+      fetch(KS_APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'text/plain' }
+      })
+      .then(r => r.json())
+      .catch(e => console.error(e))
+      .finally(() => {
         msg.style.display = 'block';
         btn.style.display = 'none';
         
@@ -699,7 +717,7 @@
           msg.style.display = 'none';
           form.reset();
         }, 2000);
-      }, 1000);
+      });
     }
   </script>
 </body>
